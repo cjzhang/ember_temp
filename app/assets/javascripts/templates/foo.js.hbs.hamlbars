@@ -1,4 +1,5 @@
 FOO TEMPLATE
 
+{{input type='text' value=model.name placeholder="Enter Name"}}
+
 %div
-  {{model.name}}
