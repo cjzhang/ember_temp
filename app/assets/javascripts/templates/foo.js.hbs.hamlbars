@@ -1,0 +1,4 @@
+FOO TEMPLATE
+
+%div
+  {{model.name}}
