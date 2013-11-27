@@ -19,5 +19,5 @@
 
   .purchases
     PURCHASES HERE
+    {{outlet "monsters"}}
     {{outlet "multiplierPotion"}}
-    {{outlet "purchases"}}
