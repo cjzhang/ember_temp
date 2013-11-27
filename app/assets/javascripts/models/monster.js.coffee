@@ -3,6 +3,7 @@ App.Monster = DS.Model.extend(
   baseCost: DS.attr()
   count: DS.attr()
   perSecond: DS.attr()
+  description: DS.attr()
 
   purchase: ->
     @set('count', @get('count') + 1)

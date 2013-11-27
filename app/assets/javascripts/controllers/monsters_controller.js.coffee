@@ -1,1 +1,3 @@
-App.MonstersController = Ember.ArrayController.extend()
+App.MonstersController = Ember.ArrayController.extend(
+  itemController: 'monster'
+  )

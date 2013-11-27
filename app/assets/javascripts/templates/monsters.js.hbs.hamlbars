@@ -1,5 +1,6 @@
 .monsters
   BLAH
   {{#each monster in controller}}
-  {{monster.name}}
+  {{monster.name}} {{monster.test}}
+  {{view App.MonsterView}}
   {{/each}}
