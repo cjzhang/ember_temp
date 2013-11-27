@@ -4,7 +4,7 @@ App.Router.map ()->
   @resource 'foo', ->
     @route ':foo_id'
   @resource 'game', ->
-  
+
 
 App.ApplicationRoute = Ember.Route.extend (redirect: ->
     # game is the default route
@@ -19,14 +19,24 @@ App.GameRoute = Ember.Route.extend(
       count: 0
       perClick: 1
       perSecond: 0.1
+      perSecondMultiplier: 1
     })
   setupController: (controller, model) ->
     @_super controller, model
     controller.set('game', model)
     eggController = @controllerFor("egg")
     eggController.set('game', model)
-    
-  
+
+    mpController = @controllerFor("multiplierPotion")
+    mpController.set('game', model)
+    mpController.set('item', @store.createRecord(App.Item, {
+      name: "Multiplier Potion"
+      cost: 100
+    }))
+    setIntervalWithContext((-> @checkIfOver()), 1000, mpController)
+
+
+
   renderTemplate: ->
     @_super(this, arguments)
     @render('egg', {
@@ -39,7 +49,13 @@ App.GameRoute = Ember.Route.extend(
       into: 'game',
       controller: null #@controllerFor("monsters")
     })
+    @render('multiplierPotion', {
+      outlet: 'multiplierPotion',
+      into: 'game',
+      controller: @controllerFor("multiplierPotion")
+    })
 )
+
 
 App.FooRoute = Ember.Route.extend(
   model: ->
