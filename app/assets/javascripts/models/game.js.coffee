@@ -4,14 +4,15 @@ App.Game = DS.Model.extend(
   count: DS.attr()
   perClick: DS.attr()
   perSecond: DS.attr()
-   
+  growthRate: 1.15
+
   init: ->
     @_super(this, arguments)
     setIntervalWithContext((-> @tick()), 1000, this)
-    
+
   tick: ->
     @set('count', @get('count') + @get('perSecond'))
-    
+
   click: ->
     @set('count', @get('count') + @get('perClick'))
 )

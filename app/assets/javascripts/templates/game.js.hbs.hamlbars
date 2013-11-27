@@ -19,4 +19,4 @@
 
   .purchases
     PURCHASES HERE
-    {{outlet "purchases"}}
+    {{outlet "monsters"}}
