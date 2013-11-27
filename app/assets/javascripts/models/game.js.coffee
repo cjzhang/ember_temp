@@ -3,6 +3,7 @@ App.Game = DS.Model.extend(
   playerName: DS.attr()
   count:      DS.attr()
   perClick:   DS.attr()
+  growthRate: 1.15
   perSecond:  DS.attr()
   perSecondMultiplier: DS.attr()
 

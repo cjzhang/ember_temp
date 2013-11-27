@@ -13,14 +13,7 @@ App.ApplicationRoute = Ember.Route.extend (redirect: ->
 
 App.GameRoute = Ember.Route.extend(
   model: ->
-    return @store.createRecord(App.Game, {
-      title: "Game"
-      playerName: "Player"
-      count: 0
-      perClick: 1
-      perSecond: 0.1
-      perSecondMultiplier: 1
-    })
+    return App.Game.find(1)
   setupController: (controller, model) ->
     @_super controller, model
     controller.set('game', model)
@@ -35,7 +28,8 @@ App.GameRoute = Ember.Route.extend(
     }))
     setIntervalWithContext((-> @checkIfOver()), 1000, mpController)
 
-
+    monstersController = @controllerFor("monsters")
+    monstersController.set('content', App.Monster.find())
 
   renderTemplate: ->
     @_super(this, arguments)
@@ -45,9 +39,9 @@ App.GameRoute = Ember.Route.extend(
       controller: @controllerFor("egg")
     })
     @render('monsters', {
-      outlet: 'purchases',
+      outlet: 'monsters',
       into: 'game',
-      controller: null #@controllerFor("monsters")
+      controller: @controllerFor("monsters")
     })
     @render('multiplierPotion', {
       outlet: 'multiplierPotion',
