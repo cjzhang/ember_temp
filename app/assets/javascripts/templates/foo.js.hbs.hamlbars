@@ -1,5 +1,15 @@
 FOO TEMPLATE
 
-{{input type='text' value=model.name placeholder="Enter Name"}}
+{{input type='text' value=foo.name placeholder="Enter Name"}}
 
+%label
+  Count
 %div
+  {{bar.count}}
+
+
+{{outlet "bar"}}
+
+
+%div.clicky
+  CLICK HERE

@@ -1,3 +1,7 @@
 App.FooController = Ember.ObjectController.extend(
-  model: null
+  foo: null,
+  bar: null
+
+  increment: ->
+    @bar.set('count', @bar.get('count') + 1)
 )
