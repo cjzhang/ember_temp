@@ -1,0 +1,1 @@
+%img{:bind => {:src => 'imageUrl', :height => 'height', :width => 'width'}}

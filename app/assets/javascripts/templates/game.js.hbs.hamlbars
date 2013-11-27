@@ -1,0 +1,22 @@
+%h2.title
+  {{game.title}}
+
+.info
+  %p
+    {{prettyNumber game.count}}
+  %p
+    {{game.perSecond}} per second
+  .heart
+    x
+.game
+  .clicky
+    CLICKY THING HERE
+    {{outlet "egg"}}
+
+  .context
+    TABS AND STUFF HERE
+    {{outlet "navigation"}}
+
+  .purchases
+    PURCHASES HERE
+    {{outlet "purchases"}}
