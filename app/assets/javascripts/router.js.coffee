@@ -17,7 +17,21 @@ App.FooRoute = Ember.Route.extend(
     })
 
   setupController: (controller, model) ->
-    @_super controller, model
 
+    @_super controller, model
+    controller.set('foo', model)
+    controller.set('bar', @store.createRecord(App.Bar, {
+      count: 0
+      rate: 0
+    }))
     applicationController = @controllerFor("application")
+
+  #http://blog.safaribooksonline.com/2013/09/10/ember-js-outlets/
+  renderTemplate: ->
+    @_super(this, arguments)
+    @render('bar', {
+      outlet: 'bar',
+      into: 'foo'
+    })
+
 )
