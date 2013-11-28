@@ -1,16 +1,15 @@
 App.Monster = DS.Model.extend(
   name: DS.attr()
   baseCost: DS.attr()
-  count: DS.attr()
   basePerSecond: DS.attr()
+  baseExpRequired: DS.attr()
+  growthRate: DS.attr()
+  levelEffectiveness: DS.attr()
   description: DS.attr()
   imageUrl: DS.attr()
-  exp: DS.attr()
+  count: 0
+  exp: 0
   level: 0
-  levelEffectiveness: 1.0
-  growthRate: 1.15
-  baseExpRequired: 50
-  
 
   perSecond: (->
     @get('basePerSecond') + @get('basePerSecond') * @get('level') * @get('levelEffectiveness')
