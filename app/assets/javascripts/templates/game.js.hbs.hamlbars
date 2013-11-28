@@ -1,5 +1,5 @@
 %h1.title
-  Clicky Egg Game! ({{game.title}})
+  Clicky Egg Game! ({{game.title}}) 
 
 .info
   You have {{prettyNumber game.count}} eggs (and are earning {{prettyNumber perSecond}} per second)
