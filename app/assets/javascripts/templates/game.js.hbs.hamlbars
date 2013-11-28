@@ -3,9 +3,9 @@
 
 .info
   %p
-    {{prettyNumber game.count}}
+    {{prettyNumber game.count}} eggs
   %p
-    {{perSecond}} per second
+    {{prettyNumber perSecond}} per second
   .heart
     x
 .game

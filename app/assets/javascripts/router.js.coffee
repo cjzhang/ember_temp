@@ -17,6 +17,8 @@ App.GameRoute = Ember.Route.extend(
   setupController: (controller, model) ->
     @_super controller, model
     controller.set('game', model)
+    mons = App.Monster.find()
+    controller.set('monsters', mons)
     eggController = @controllerFor("egg")
     eggController.set('game', model)
 
@@ -29,7 +31,7 @@ App.GameRoute = Ember.Route.extend(
     setIntervalWithContext((-> @checkIfOver()), 1000, mpController)
 
     monstersController = @controllerFor("monsters")
-    monstersController.set('content', App.Monster.find())
+    monstersController.set('content', mons)
 
   renderTemplate: ->
     @_super(this, arguments)
