@@ -3,6 +3,7 @@ App.Game = DS.Model.extend(
   playerName: DS.attr()
   count:      DS.attr()
   lifetimeCount: 0
+  lifetimeExp: 0
   perClick:   DS.attr()
   growthRate: 1.15
   perSecond:  DS.attr()
@@ -14,17 +15,14 @@ App.Game = DS.Model.extend(
     setIntervalWithContext((-> @tick()), 1000, this)
 
   tick: ->
-    @changeCount(@tickIncrement())
+    @addCount(@tickIncrement())
     @set('lifetimeCount', @get('lifetimeCount') + @tickIncrement())
 
   tickIncrement: ->
     @get('perSecond') * @get('perSecondMultiplier')
-
-  click: ->
-    @changeCount(@get('perClick'))
-    @set('lifetimeCount', @get('lifetimeCount') + @get('perClick'))
-    
-  changeCount: (amount) ->
+ 
+  #can be negative  
+  addCount: (amount) ->
     @set('count', @get('count') + amount)
   
 )

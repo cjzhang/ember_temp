@@ -24,7 +24,7 @@ App.Monster.FIXTURES = [
   baseCost: 10
   count: 0
   basePerSecond: 0.2
-  level: 1
+  exp: 0
   description: "It's a pidgeon! It lays eggs."
   imageUrl: "/images/placeholder_pidgey_bulbapedia.png"
   }
@@ -34,7 +34,7 @@ App.Monster.FIXTURES = [
   baseCost: 100
   count: 0
   basePerSecond: 0.4
-  level: 1
+  exp: 0
   description: "A duck. Good for eating."
   imageUrl: "/images/placeholder_farfetchd_bulbapedia.png"}
   ,
@@ -43,7 +43,7 @@ App.Monster.FIXTURES = [
   baseCost: 500
   count: 0
   basePerSecond: 2.0
-  level: 1
+  exp: 0
   description: "Look, flavortext is for suckers. But here's a lizard. It lizzes."
   imageUrl: "/images/placeholder_heliolisk_bulbapedia.png"}
   ,
@@ -52,7 +52,7 @@ App.Monster.FIXTURES = [
   baseCost: 2000
   count: 0
   basePerSecond: 40
-  level: 1
+  exp: 0
   description: "...What? You're not sure what's going on here but the guy at the store PROMISES that if you buy this cat, you'll get tons of eggs. You don't know what kind of egg he's talking about, but... ????"
   imageUrl: "/images/placeholder_meowth_bulbapedia.png"}
 ]

@@ -1,3 +1,6 @@
 STATS, EH?
-%p
-  {{prettyNumber controllers.game.game.lifetimeCount}} total eggs made
+%ul
+  %li
+    {{prettyNumber controllers.game.game.lifetimeCount}} total eggs made
+  %li
+    {{prettyNumber controllers.game.game.lifetimeExp}} total exp made

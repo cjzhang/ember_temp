@@ -7,8 +7,6 @@ A thing to learn Ember with. Also a clicky game.
 TODO LIST
 ==========
 
-Make it possible to level up the monsters by clicking on them. Leveling up monsters prevents you from making gold by clicking but increases the gold per second of the monster.
-
 Make items more pretty. Refactor into fixtures, add some way to get them that leaves them limited as well.
 
 Make mons take up less space/make flavortext be a hovery thing instead.
