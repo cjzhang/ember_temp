@@ -36,7 +36,7 @@ App.Monster.FIXTURES = [
   basePerSecond: 0.4
   level: 1
   description: "A duck. Good for eating."
-  imageUrl: "/images/placeholder_ducklett_bulbapedia.png"}
+  imageUrl: "/images/placeholder_farfetchd_bulbapedia.png"}
   ,
   {id: "lizard"
   name: "Lizard"
