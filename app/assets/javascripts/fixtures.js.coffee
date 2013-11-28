@@ -4,14 +4,18 @@ App.Game.FIXTURES = [
   playerName: "Fixture Player"
   count: 0
   perClick: 1
-  perSecond: 0.1}
+  perSecond: 0.1
+  perSecondMultiplier: 1
+  }
   ,
   {id: 2
   title: "Debug Game"
   playerName: "Player"
   count: 0
   perClick: 100
-  perSecond: 100}
+  perSecond: 100
+  perSecondMultiplier: 1
+  }
 ]
 
 App.Monster.FIXTURES = [

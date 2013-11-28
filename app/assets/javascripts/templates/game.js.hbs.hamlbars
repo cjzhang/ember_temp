@@ -5,7 +5,7 @@
   %p
     {{prettyNumber game.count}}
   %p
-    {{game.perSecond}} per second
+    {{perSecond}} per second
   .heart
     x
 .game
@@ -20,3 +20,4 @@
   .purchases
     PURCHASES HERE
     {{outlet "monsters"}}
+    {{outlet "multiplierPotion"}}
