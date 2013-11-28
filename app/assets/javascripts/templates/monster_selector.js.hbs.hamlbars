@@ -1,5 +1,7 @@
 .monsters-selector
   {{view App.MonsterSelectView}}
   {{#each monster in controller.content}}
+  {{#if monster.selectable}}
   {{view App.MonsterSelectView content=monster}}
+  {{/if}}
   {{/each}}

@@ -9,7 +9,7 @@ App.GameController = Ember.ObjectController.extend(
   recalculate: ->
     total = 0
     @game.get("monsters").forEach( (mon) -> 
-      total += mon.get("count") * mon.get("basePerSecond")
+      total += mon.get("count") * mon.get("perSecond")
     )
     @game.set("perSecond", total)
 )
