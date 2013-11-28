@@ -6,6 +6,7 @@
 .game
   .clicky
     {{outlet "egg"}}
+    {{view App.MonsterSelectorView controller=controllers.monsters}}
 
   .context
     {{outlet "navigation"}}

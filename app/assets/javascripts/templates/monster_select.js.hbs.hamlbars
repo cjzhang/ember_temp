@@ -1,0 +1,9 @@
+%div{:bind => {:class =>":monster view.content.id view.content::none"}}
+  .icon
+  %label.name
+    {{#if view.content}}
+    {{view.content.name}}
+    {{else}}
+    None
+    {{/if}}
+

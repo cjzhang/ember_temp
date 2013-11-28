@@ -1,5 +1,6 @@
 App.GameController = Ember.ObjectController.extend(
   game: null
+  needs: ["monsters"]
 
   perSecond: (->
     @game.get("perSecond") * @game.get("perSecondMultiplier")
