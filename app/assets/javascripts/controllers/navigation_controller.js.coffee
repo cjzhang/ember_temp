@@ -8,6 +8,9 @@ App.NavigationController = Ember.ObjectController.extend(
   
   statsActive: (->
     @activeTab == "statistics").property('activeTab')
+    
+  menuActive: (->
+    @activeTab == "menu").property('activeTab')
   
   aboutActive: (->
     @activeTab == "about").property('activeTab')

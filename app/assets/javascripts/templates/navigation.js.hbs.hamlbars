@@ -1,10 +1,15 @@
-%li#statistics{:_action => 'toggle "statistics"', :bind => {:class => "statsActive:active:inactive"}}
-  STATS
-%li#about{:_action => 'toggle "about"', :bind => {:class => "aboutActive:active:inactive"}}
-  ABOUT
+%ul.navigation-options
+  %li#statistics{:_action => 'toggle "statistics"', :bind => {:class => "statsActive:active:inactive"}}
+    STATS
+  %li#menu{:_action => 'toggle "menu"', :bind => {:class => "menuActive:active:inactive"}}
+    MENU
+  %li#about{:_action => 'toggle "about"', :bind => {:class => "aboutActive:active:inactive"}}
+    ABOUT
   
 
 #statistics{:bind => {:class => "statsActive:active:inactive"}}
   {{view App.StatisticsView}}
+#menu{:bind => {:class => "menuActive:active:inactive"}}
+  {{view App.MenuView}}
 #about{:bind => {:class => "aboutActive:active:inactive"}}
   {{view App.AboutView}}
