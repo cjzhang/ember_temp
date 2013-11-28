@@ -16,10 +16,9 @@ App.MultiplierPotionController = Ember.ObjectController.extend(
     @ticksRemaining += 20
 
   checkIfOver: ->
-    if @active? && @ticksRemaining > 1 #ob1 error if this is 0
+    if @active? && @ticksRemaining > 0 #ob1 error if this is 0
       @ticksRemaining -= 1
-
-    else if @active? && @ticksRemaining == 0
+    else if @active?
       @active = false
       @game.set("perSecondMultiplier", 1)
 
