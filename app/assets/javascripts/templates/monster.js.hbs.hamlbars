@@ -1,4 +1,4 @@
-.monster{:bind => {:id =>"view.content.id"}}
+%div{:bind => {:class =>":monster view.content.id"}}
   .icon
   %label.name
     {{view.content.name}} (owned: {{view.content.count}}) Cost: {{prettyNumber view.content.cost}} eggs

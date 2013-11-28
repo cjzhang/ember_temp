@@ -1,6 +1,5 @@
 App.MonsterController = Ember.ObjectController.extend(
   needs: ['game']
-  test: (-> @get('description')).property('description')
   
   cost: (-> 
     @get('baseCost') * Math.pow(@get('controllers.game').get('growthRate'), 
