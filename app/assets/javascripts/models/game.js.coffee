@@ -22,6 +22,7 @@ App.Game = DS.Model.extend(
 
   click: ->
     @changeCount(@get('perClick'))
+    @set('lifetimeCount', @get('lifetimeCount') + @get('perClick'))
     
   changeCount: (amount) ->
     @set('count', @get('count') + amount)

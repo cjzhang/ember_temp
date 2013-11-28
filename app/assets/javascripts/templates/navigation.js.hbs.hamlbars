@@ -1,6 +1,6 @@
-%li#statistics{:_action => 'toggle "statistics"'}
+%li#statistics{:_action => 'toggle "statistics"', :bind => {:class => "statsActive:active:inactive"}}
   STATS
-%li#about{:_action => 'toggle "about"'}
+%li#about{:_action => 'toggle "about"', :bind => {:class => "aboutActive:active:inactive"}}
   ABOUT
   
 

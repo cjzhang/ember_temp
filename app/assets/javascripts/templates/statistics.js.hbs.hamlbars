@@ -1,1 +1,3 @@
 STATS, EH?
+%p
+  {{prettyNumber controllers.game.game.lifetimeCount}} total eggs made
