@@ -3,17 +3,16 @@
 App.Router.map ()->
   @resource 'foo', ->
     @route ':foo_id'
-  @resource 'game', ->
-
+  @resource 'game', { path: '/game/:game_id' }
 
 App.ApplicationRoute = Ember.Route.extend (redirect: ->
     # game is the default route
-    @transitionTo "game"
+    @transitionTo "game", App.Game.find(1)
 )
 
 App.GameRoute = Ember.Route.extend(
-  model: ->
-    return App.Game.find(1)
+  model: (params) ->
+    return App.Game.find(params.game_id)
   setupController: (controller, model) ->
     @_super controller, model
     controller.set('game', model)
