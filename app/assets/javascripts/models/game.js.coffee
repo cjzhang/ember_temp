@@ -6,17 +6,22 @@ App.Game = DS.Model.extend(
   growthRate: 1.15
   perSecond:  DS.attr()
   perSecondMultiplier: DS.attr()
+  monsters: []
 
   init: ->
     @_super(this, arguments)
     setIntervalWithContext((-> @tick()), 1000, this)
 
   tick: ->
-    @set('count', @get('count') + @tickIncrement())
+    @changeCount(@tickIncrement())
 
   tickIncrement: ->
     @get('perSecond') * @get('perSecondMultiplier')
 
   click: ->
-    @set('count', @get('count') + @get('perClick'))
+    @changeCount(@get('perClick'))
+    
+  changeCount: (amount) ->
+    @set('count', @get('count') + amount)
+  
 )

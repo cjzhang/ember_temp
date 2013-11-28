@@ -1,1 +1,7 @@
-rawr
+.monster
+  %label.name
+    {{view.content.name}} (owned: {{view.content.count}})
+  .description
+    {{view.content.description}}
+  .price
+    Cost: {{prettyNumber view.content.cost}} eggs
