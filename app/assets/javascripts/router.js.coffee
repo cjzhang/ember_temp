@@ -39,6 +39,11 @@ App.GameRoute = Ember.Route.extend(
       into: 'game',
       controller: @controllerFor("egg")
     })
+    @render('navigation', {
+      outlet: 'navigation',
+      into: 'game',
+      controller: @controllerFor("navigation")
+    })
     @render('monsters', {
       outlet: 'monsters',
       into: 'game',

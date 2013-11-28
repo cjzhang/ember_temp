@@ -2,6 +2,7 @@ App.Game = DS.Model.extend(
   title:      DS.attr()
   playerName: DS.attr()
   count:      DS.attr()
+  lifetimeCount: 0
   perClick:   DS.attr()
   growthRate: 1.15
   perSecond:  DS.attr()
@@ -14,6 +15,7 @@ App.Game = DS.Model.extend(
 
   tick: ->
     @changeCount(@tickIncrement())
+    @set('lifetimeCount', @get('lifetimeCount') + @tickIncrement())
 
   tickIncrement: ->
     @get('perSecond') * @get('perSecondMultiplier')
