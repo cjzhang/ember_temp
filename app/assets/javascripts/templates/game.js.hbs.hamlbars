@@ -5,19 +5,16 @@
   %p
     {{prettyNumber game.count}} eggs
   %p
-    {{prettyNumber perSecond}} per second
+    {{prettyNumber perSecond}} eggs per second
   .heart
     x
 .game
   .clicky
-    CLICKY THING HERE
     {{outlet "egg"}}
 
   .context
-    TABS AND STUFF HERE
     {{outlet "navigation"}}
 
   .purchases
-    PURCHASES HERE
     {{outlet "monsters"}}
     {{outlet "multiplierPotion"}}

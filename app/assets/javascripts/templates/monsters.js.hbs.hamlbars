@@ -1,5 +1,4 @@
 .monsters
-  BLAH
   {{#each monster in controller}}
   {{view App.MonsterView content=monster}}
   {{/each}}

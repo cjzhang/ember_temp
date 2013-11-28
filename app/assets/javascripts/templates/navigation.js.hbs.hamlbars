@@ -1,0 +1,10 @@
+%li#statistics{:_action => 'toggle "statistics"'}
+  STATS
+%li#about{:_action => 'toggle "about"'}
+  ABOUT
+  
+
+#statistics{:bind => {:class => "statsActive:active:inactive"}}
+  {{view App.StatisticsView}}
+#about{:bind => {:class => "aboutActive:active:inactive"}}
+  {{view App.AboutView}}
