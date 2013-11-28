@@ -1,4 +1,5 @@
 App.NavigationController = Ember.ObjectController.extend(
+  needs: ["game"]
   activeTab: "statistics"
   actions: {
     toggle: (tabName) ->
@@ -10,5 +11,5 @@ App.NavigationController = Ember.ObjectController.extend(
   
   aboutActive: (->
     @activeTab == "about").property('activeTab')
-    
+  
 )
