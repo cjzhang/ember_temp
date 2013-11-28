@@ -1,15 +1,58 @@
+.title, .info
+  text-align: center
 
+.info
+  padding-bottom: 10px
+  font-size: 1.5em
+  font-weight: bold
+  
+.game
+  overflow: hidden
+  border-bottom: 1px solid
+  
 .clicky, .context, .purchases
   border: 1px solid
   float: left
   width: 33%
-  height: 400px
+  margin-bottom: -100%
+  padding-bottom: 100%
+
+.clicky img
+  margin-left: auto
+  margin-right: auto
+  display: block
+  padding-top: 40px
   
 .monster
   border: 1px solid
+  min-height: 75px
+  
+#pidgeon.monster .icon
+  background-color: #33CCCC
+  
+#duck.monster .icon
+  background-color: #996699
+  
+#lizard.monster .icon
+  background-color: #006633
+  
+#cat.monster .icon
+  background-color: #FFCC00
+
+.monster .icon
+  height: 75px
+  width: 75px
+  float: left
+  
+.navigation ul
+  padding: 0px
+  margin: 0px
+  display: table
+  width: 100%
   
 .navigation li
-  display: inline-block
+  display: table-cell
+  text-align: center
 
 .navigation div.inactive
   display: none

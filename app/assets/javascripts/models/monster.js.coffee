@@ -4,6 +4,8 @@ App.Monster = DS.Model.extend(
   count: DS.attr()
   basePerSecond: DS.attr()
   description: DS.attr()
+  level: DS.attr()
+  imageUrl: "#66CC33"
 )
 
 

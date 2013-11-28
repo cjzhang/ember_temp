@@ -1,13 +1,8 @@
-%h2.title
-  {{game.title}}
+%h1.title
+  Clicky Egg Game! ({{game.title}})
 
 .info
-  %p
-    {{prettyNumber game.count}} eggs
-  %p
-    {{prettyNumber perSecond}} eggs per second
-  .heart
-    x
+  You have {{prettyNumber game.count}} eggs (and are earning {{prettyNumber perSecond}} per second)
 .game
   .clicky
     {{outlet "egg"}}
