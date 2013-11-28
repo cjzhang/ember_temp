@@ -7,7 +7,7 @@ App.Game = DS.Model.extend(
   perClick:   DS.attr()
   growthRate: 1.15
   perSecond:  DS.attr()
-  perSecondMultiplier: DS.attr()
+  perSecondMultiplier: 1
   monsters: []
 
   init: ->

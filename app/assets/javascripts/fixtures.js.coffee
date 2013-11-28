@@ -1,20 +1,18 @@
 App.Game.FIXTURES = [
   {id: 1
-  title: "Fixture Version"
-  playerName: "Fixture Player"
+  title: "Normal Version"
+  playerName: "Player One"
   count: 0
   perClick: 1
   perSecond: 0
-  perSecondMultiplier: 1
   }
   ,
   {id: 2
   title: "Debug Version"
-  playerName: "Player"
-  count: 0
+  playerName: "Meowth"
+  count: 1000000
   perClick: 1000
   perSecond: 100
-  perSecondMultiplier: 1
   }
 ]
 
