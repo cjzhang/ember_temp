@@ -6,11 +6,14 @@
 .game
   .clicky
     {{outlet "egg"}}
-    {{view App.MonsterSelectorView controller=controllers.monsters}}
+    .stable
+      {{view App.MonsterSelectorView controller=controllers.monsters}}
 
   .context
     {{outlet "navigation"}}
 
   .purchases
+    .store
+      {{outlet "store"}}
     {{outlet "monsters"}}
-    {{outlet "multiplierPotion"}}
+

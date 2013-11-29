@@ -58,3 +58,15 @@ App.Monster.FIXTURES = [
   description: "...What? You're not sure what's going on here but the guy at the store PROMISES that if you buy this cat, you'll get tons of eggs. You don't know what kind of egg he's talking about, but... ????"
   imageUrl: "/images/placeholder_meowth_bulbapedia.png"}
 ]
+
+App.Item.FIXTURES = [
+  {
+  id: "mpotion"
+  name: "Multiplier Potion"
+  cost: 100
+  controllerName: "multiplierPotion"
+  numAvailable: 10
+  unlocked: true
+  }
+]
+

@@ -5,7 +5,7 @@ App.Router.map ()->
 
 App.ApplicationRoute = Ember.Route.extend (redirect: ->
     # game is the default route
-    @transitionTo "game", App.Game.find(1)
+    @transitionTo "game", App.Game.find(2)
 )
 
 App.GameRoute = Ember.Route.extend(
@@ -13,22 +13,26 @@ App.GameRoute = Ember.Route.extend(
     return App.Game.find(params.game_id)
   setupController: (controller, model) ->
     @_super controller, model
+    
+    #gameController ends up knowing p much everything
+    #about what it owns, for calculation purposes
     controller.set('game', model)
+    
+    #Load monsters
     mons = App.Monster.find()
-    controller.set('monsters', mons)
+    monstersController = @controllerFor("monsters")
+    monstersController.set('content', mons)
+    controller.set('monsters', mons)    
+        
     eggController = @controllerFor("egg")
     eggController.set('game', model)
 
-    mpController = @controllerFor("multiplierPotion")
-    mpController.set('game', model)
-    mpController.set('item', @store.createRecord(App.Item, {
-      name: "Multiplier Potion"
-      cost: 100
-    }))
-    setIntervalWithContext((-> @checkIfOver()), 1000, mpController)
 
-    monstersController = @controllerFor("monsters")
-    monstersController.set('content', mons)
+    items = App.Item.find()
+    itemsController = @controllerFor("items")
+    itemsController.set('content', items)
+    controller.set('items', items) 
+
 
   renderTemplate: ->
     @_super(this, arguments)
@@ -47,10 +51,10 @@ App.GameRoute = Ember.Route.extend(
       into: 'game',
       controller: @controllerFor("monsters")
     })
-    @render('multiplierPotion', {
-      outlet: 'multiplierPotion',
+    @render('items', {
+      outlet: 'store',
       into: 'game',
-      controller: @controllerFor("multiplierPotion")
+      controller: @controllerFor("items")
     })
 )
 
