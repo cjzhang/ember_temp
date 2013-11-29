@@ -1,16 +1,18 @@
-App.MultiplierPotionController = Ember.ObjectController.extend(
-  item: null
-  game: null
+App.MultiplierPotionController = App.ItemController.extend(
   ticksRemaining: 0
   active: false
-
+  
+  #item is stored as @content and can straightup use @get
   buy: ->
-    return unless @canPurchase()
-    @decrementCost()
+    @_super()
+    #@activate()
+    
+  use: ->
     @activate()
 
 
   activate: ->
+    @decrementProperty('count', 1)
     @active = true
     @game.set("perSecondMultiplier", 2)
     @ticksRemaining += 20
@@ -22,9 +24,4 @@ App.MultiplierPotionController = Ember.ObjectController.extend(
       @active = false
       @game.set("perSecondMultiplier", 1)
 
-  canPurchase: ->
-    @game.get('count') > @item.get('cost')
-
-  decrementCost: ->
-    @game.set("count", @game.get('count') - @item.get('cost'))
 )

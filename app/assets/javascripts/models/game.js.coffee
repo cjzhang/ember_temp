@@ -9,6 +9,7 @@ App.Game = DS.Model.extend(
   perSecond:  DS.attr()
   perSecondMultiplier: 1
   monsters: []
+  items: []
 
   init: ->
     @_super(this, arguments)

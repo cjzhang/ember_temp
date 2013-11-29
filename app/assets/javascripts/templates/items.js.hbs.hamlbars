@@ -1,0 +1,12 @@
+A store where you can buy things. Sometimes there are things.
+{{#if controller.hasPurchasableItems}}
+{{#each item in controller}}
+{{#if item.purchasable}}
+{{view App.ItemView content=item}}
+{{/if}}
+{{/each}}
+{{else}}
+.no-items
+  Actually, it looks like he hasn't got anything left. Come back another time.
+{{/if}}
+
