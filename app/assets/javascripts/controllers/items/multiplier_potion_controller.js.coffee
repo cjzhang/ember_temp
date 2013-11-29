@@ -3,25 +3,24 @@ App.MultiplierPotionController = App.ItemController.extend(
   active: false
   
   #item is stored as @content and can straightup use @get
+  #Also multiplier potions are used immediately
   buy: ->
     @_super()
-    #@activate()
+    @activate()
     
   use: ->
     @activate()
 
-
   activate: ->
     @decrementProperty('count', 1)
-    @active = true
-    @game.set("perSecondMultiplier", 2)
-    @ticksRemaining += 20
-
-  checkIfOver: ->
-    if @active? && @ticksRemaining > 0 #ob1 error if this is 0
-      @ticksRemaining -= 1
-    else if @active?
-      @active = false
-      @game.set("perSecondMultiplier", 1)
+    effect = @store.createRecord(App.Modifier, {
+      name: "Feeling Multiplicative"
+      description: "Your monsters are producing eggs twice as fast."
+      active: true
+      ticksRemaining: 3
+      type: "perSecondMultiplier"
+      amount: 1
+    })
+    @get("controllers.game").addModifier(effect)
 
 )

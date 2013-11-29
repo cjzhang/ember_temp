@@ -3,13 +3,54 @@ App.GameController = Ember.ObjectController.extend(
   needs: ["monsters"]
 
   perSecond: (->
-    @game.get("perSecond") * @game.get("perSecondMultiplier")
+    @tickIncrement()
   ).property("game.perSecond", "game.perSecondMultiplier")
   
+  init: ->
+    @_super(this, arguments)
+
+  tick: ->
+    @game.incrementProperty('count', @tickIncrement())
+    @game.incrementProperty('lifetimeCount', @tickIncrement())
+    @game.get("modifiers").forEach((modifier, index) ->
+      if (modifier.get("ticksRemaining") > 0)
+        modifier.decrementProperty('ticksRemaining')
+        if (modifier.get("ticksRemaining") == 0)
+          @recalculate()
+    , this)
+
+
+  tickIncrement: ->
+    @game.get('perSecond') * @game.get('perSecondMultiplier')
+
   recalculate: ->
-    total = 0
+    perSecondTotal = @game.get("basePerSecond")
+    perSecondMultiplierTotal = @game.get("basePerSecondMultiplier")
+    perClickTotal = @game.get("basePerClick")
+    
+    #monsters increase income per second
     @game.get("monsters").forEach( (mon) -> 
-      total += mon.get("count") * mon.get("perSecond")
+      perSecondTotal += mon.get("count") * mon.get("perSecond")
     )
-    @game.set("perSecond", total)
+    
+    cleaned = @game.get("modifiers").filterProperty("canBeApplied")
+    @game.set("modifiers", cleaned)
+
+    #active modifiers do various things
+    @game.get("modifiers").forEach( ((modifier) ->
+      return unless modifier.get("canBeApplied")
+      
+      switch(modifier.get("type"))
+        when "perSecondMultiplier"
+          perSecondMultiplierTotal += modifier.get("amount")
+    ))
+
+    @game.set("perSecond", perSecondTotal)
+    @game.set("perSecondMultiplier", perSecondMultiplierTotal)
+    @game.set("perClick", perClickTotal)
+
+    
+  addModifier: (modifier) ->
+    @game.get("modifiers").push(modifier)
+    @recalculate()
 )

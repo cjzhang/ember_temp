@@ -9,8 +9,8 @@ App.MonsterController = Ember.ObjectController.extend(
   buy: ->
     gameController = @get('controllers.game')
     if gameController.get("count") > @get('cost')
-      gameController.get("game").addCount(-@get('cost'))
-      @content.set('count', @content.get('count') + 1)
+      gameController.get("game").incrementProperty('count', -@get('cost'))
+      @incrementProperty('count')
       gameController.recalculate()
       
       

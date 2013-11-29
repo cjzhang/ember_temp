@@ -6,10 +6,15 @@ App.Item = DS.Model.extend(
   unlocked: DS.attr() #visibility
   count: 0 #number owned
   
+
+  
   #for items that bestow an effect
   ticksRemaining: 0
   active: false
-  
+  #Used to distinguish between different item effects
+  effectType: DS.attr()
+  effectAmount: DS.attr()
+    
   purchasable: (->
     @get('unlocked') && @get('numAvailable') > 0
   ).property('numAvailable', 'unlocked')

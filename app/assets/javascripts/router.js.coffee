@@ -17,6 +17,7 @@ App.GameRoute = Ember.Route.extend(
     #gameController ends up knowing p much everything
     #about what it owns, for calculation purposes
     controller.set('game', model)
+    setIntervalWithContext((-> @tick()), 1000, controller)
     
     #Load monsters
     mons = App.Monster.find()
