@@ -7,25 +7,31 @@ A thing to learn Ember with. Also a clicky game.
 TODO LIST
 ==========
 
-Make items more pretty. Refactor into fixtures, add some way to get them that leaves them limited as well.
-
 Make mons take up less space/make flavortext be a hovery thing instead.
 
 Notice/alert message pane.
+
+Figure out the difference between properties and attributes or something.
+
+Debug panel?
+
+Upgrades.
 
 Refactor things (everything) to be more clean.
 
 Make stats pane have more stats.
 
-Add more CSS to make things look nicer.
-
-Upgrades.
+Add more CSS to make things look nicer. Make items more pretty. 
 
 Cheevos.
 
 Inventory system for items?
 
-Debug panel?
+
+
+
+
+Content?
 
 
 Nice to Have

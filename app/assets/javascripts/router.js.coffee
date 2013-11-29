@@ -1,13 +1,15 @@
 # For more information see: http://emberjs.com/guides/routing/
 
 App.Router.map ()->
-  @resource 'game', { path: '/game/:game_id' }
+  @route 'game', { path: '/game/:game_id' }
 
-App.ApplicationRoute = Ember.Route.extend (redirect: ->
-    # game is the default route
-    @transitionTo "game", App.Game.find(2)
+App.ApplicationRoute = Ember.Route.extend()
+
+App.IndexRoute = Ember.Route.extend(
+  beforeModel: ->
+    @transitionTo('game', App.Game.find(2))
 )
-
+ 
 App.GameRoute = Ember.Route.extend(
   model: (params) ->
     return App.Game.find(params.game_id)
