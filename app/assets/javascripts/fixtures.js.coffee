@@ -3,16 +3,16 @@ App.Game.FIXTURES = [
   title: "Normal Version"
   playerName: "Player One"
   count: 0
-  perClick: 1
-  perSecond: 0
+  basePerClick: 1
+  basePerSecond: 0
   }
   ,
   {id: 2
   title: "Debug Version"
   playerName: "Meowth"
   count: 1000000
-  perClick: 1000
-  perSecond: 100
+  basePerClick: 1000
+  basePerSecond: 100
   }
 ]
 

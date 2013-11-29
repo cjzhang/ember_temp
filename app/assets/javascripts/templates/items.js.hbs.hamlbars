@@ -1,4 +1,4 @@
-A store where you can buy things. Sometimes there are things.
+A store where you can buy things. For eggs.
 {{#if controller.hasPurchasableItems}}
 {{#each item in controller}}
 {{#if item.purchasable}}
