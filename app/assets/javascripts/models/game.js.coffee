@@ -2,15 +2,15 @@ App.Game = DS.Model.extend(
   title:      DS.attr()
   playerName: DS.attr()
   count:      DS.attr()
-  lifetimeCount: 0
-  lifetimeExp: 0
+  lifetimeCount: DS.attr('number', {defaultValue: 0})
+  lifetimeExp: DS.attr('number', {defaultValue: 0})
   basePerClick: DS.attr()
-  perClick: 1
-  growthRate: 1.15
+  perClick: DS.attr('number', {defaultValue: 1})
+  growthRate: DS.attr('number', {defaultValue: 1.15})
   basePerSecond: DS.attr()
-  perSecond: 1
-  basePerSecondMultiplier: 1
-  perSecondMultiplier: 1
+  perSecond: DS.attr('number', {defaultValue: 0})
+  basePerSecondMultiplier: DS.attr('number', {defaultValue: 1})
+  perSecondMultiplier: DS.attr('number', {defaultValue: 1})
   monsters: []
   modifiers: []
 )
