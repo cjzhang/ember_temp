@@ -3,6 +3,13 @@
 
 .info
   You have {{prettyNumber game.count}} eggs (and are earning {{prettyNumber perSecond}} per second)
+
+.messages
+  .error
+    Error message here.
+  .notice
+    Notice message here.
+  
 .game
   .clicky
     {{outlet "egg"}}

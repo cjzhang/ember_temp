@@ -67,7 +67,7 @@ App.Monster.FIXTURES = [
   baseExpRequired: 100
   growthRate: 1.15
   levelEffectiveness: 0.1
-  description: "A rare spider, the shopkeeper says. Lays loads of extremely rare eggs, he says. Very valuable, he says. All these things may be true, but you were really NOT expecting it to be the side of a small pony when you asked to look at it. Still..."
+  description: "A rare spider, the shopkeeper says. Lays loads of extremely rare eggs, he says. Very valuable, he says. All these things may be true, but you were really NOT expecting it to be the size of a small pony when you asked to look at it. Still..."
   imageUrl: "/images/x.png"}
   ,
   {id: "platypus"

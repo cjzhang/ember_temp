@@ -4,4 +4,3 @@
     {{view.content.name}} (owned: {{view.content.count}}) Cost: {{prettyNumber view.content.cost}} eggs
   .description
     {{view.content.description}}
-

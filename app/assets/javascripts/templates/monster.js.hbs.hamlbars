@@ -1,7 +1,7 @@
-%div{:bind => {:class =>":monster view.content.id"}}
+%div{:bind => {:class =>":monster view.content.id", :title => "view.content.description"}}
   .icon
   %label.name
-    {{view.content.name}} (owned: {{view.content.count}}) Cost: {{prettyNumber view.content.cost}} eggs
-  .description
-    {{view.content.description}}
+    {{view.content.name}} (owned: {{view.content.count}})
+  .cost
+    Cost: {{prettyNumber view.content.cost}} eggs
 
