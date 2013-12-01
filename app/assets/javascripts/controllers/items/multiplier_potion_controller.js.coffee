@@ -3,8 +3,8 @@ App.MultiplierPotionController = App.ItemController.extend(
   #item is stored as @content and can straightup use @get
   #Also multiplier potions are used immediately
   buy: ->
-    @_super()
-    @activate()
+    if @_super()
+      @activate()
     
   use: ->
     @activate()

@@ -7,11 +7,10 @@ A thing to learn Ember with. Also a clicky game.
 TODO LIST
 ==========
 
-Make mons take up less space/make flavortext be a hovery thing instead.
-
-Notice/alert message pane.
 
 Figure out the difference between properties and attributes or something.
+
+Inventory system for items?
 
 Debug panel?
 
@@ -25,11 +24,7 @@ Add more CSS to make things look nicer. Make items more pretty.
 
 Cheevos.
 
-Inventory system for items?
-
-
-
-
+Notice/alert message panel to hold history?
 
 Content?
 
@@ -39,9 +34,11 @@ Nice to Have
 
 Menu options, content in the about pane.
 
-Update log message pane.
+Changelog.
 
 More fixtures and flavortext.
+
+More styling on tooltips and the notice/alert message.
 
 Saving and import/export of saves.
 

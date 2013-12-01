@@ -8,6 +8,14 @@ App.GameController = Ember.ObjectController.extend(
   
   init: ->
     @_super(this, arguments)
+  
+  setNotice: (text) ->
+    $(".messages .notice").html(text)
+    $(".messages .notice").show().delay(1000).fadeOut()
+  
+  setError: (text) ->
+    $(".messages .error").html(text)
+    $(".messages .error").show().delay(1000).fadeOut()
 
   tick: ->
     @game.incrementProperty('count', @tickIncrement())

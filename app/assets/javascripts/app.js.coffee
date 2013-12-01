@@ -9,4 +9,4 @@
 #= require_tree ./routes
 #= require ./router
 #= require_self
-#= require ./lib/numeral.min.js
+#= require_tree ./lib
