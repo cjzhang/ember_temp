@@ -11,16 +11,17 @@ App.Monster = DS.Model.extend(
   exp: 0
   level: 0
 
+  #TODO refactor: where should computed properties live?
   perSecond: (->
     @get('basePerSecond') + @get('basePerSecond') * @get('level') * @get('levelEffectiveness')
-    
+
   ).property('level')
-  
+
   #lol
   displayLevel: (->
     @get('level') + 1
   ).property('level')
-  
+
   selectable: (->
     @get('count') > 0
   ).property('count')

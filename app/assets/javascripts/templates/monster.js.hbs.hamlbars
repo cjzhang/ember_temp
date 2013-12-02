@@ -1,5 +1,5 @@
 %div{:bind => {:class =>":monster view.content.id", :title => "view.content.description"}}
-  .icon
+  .icon{:_action => 'buy'}
   %label.name
     {{view.content.name}} (owned: {{view.content.count}})
   .cost
