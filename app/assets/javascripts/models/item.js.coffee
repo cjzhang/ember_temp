@@ -4,7 +4,8 @@ App.Item = DS.Model.extend(
   numAvailable: DS.attr() #available for purchase
   controllerName: DS.attr()
   unlocked: DS.attr() #visibility
-  count: 0 #number owned
+  count: DS.attr('number', 0) #number owned
+  description: DS.attr()
   
 
   

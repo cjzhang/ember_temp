@@ -20,10 +20,10 @@
     {{outlet "navigation"}}
 
   .purchases
-    {{#linkTo 'game.purchases.monsters'}}Monsters{{/linkTo}}
-    {{#linkTo 'game.purchases.items'}}Items{{/linkTo}}
+    %ul.menu
+      %li
+        {{#linkTo 'purchases.monsters'}}Monsters{{/linkTo}}
+      %li
+        {{#linkTo 'purchases.items'}}Items{{/linkTo}}
     {{outlet}}
-    - #.store
-    - #  {{outlet "store"}}
-    - #{{outlet "monsters"}}
 

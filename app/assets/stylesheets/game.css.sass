@@ -72,18 +72,29 @@
   width: 75px
   float: left
   
-.navigation ul
+.navigation ul, .purchases ul
   padding: 0px
   margin: 0px
   display: table
   width: 100%
   
-.navigation-options li
+.navigation-options li, .purchases li
   display: table-cell
   text-align: center
 
 .navigation div.inactive
   display: none
 
-.navigation li.active
+.navigation li.active, .purchases .active
   background-color: #F0F0F0
+  
+.purchases .menu
+  border: 1px solid
+ 
+.purchases li a
+  text-decoration: none
+  color: black
+  display: block
+  
+.purchases .item
+  border: 1px solid
