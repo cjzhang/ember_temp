@@ -5,8 +5,9 @@ App.Router.map () ->
   @resource 'game', { path: '/game/:game_id' }, ->
     #or better with purchase resource (and purchaseindex tab) and then
     #routes (monsters, items) beneath that
-    @route 'purchases.monsters', {path: '/purchases/monsters'}
-    @route 'purchases.items', {path: '/purchases/items'}
+    @resource 'purchases', {path: '/purchases'}, ->
+      @route 'monsters', {path: '/monsters'}
+      @route 'items', {path: '/items'}
     @route('navigation', { path: '/navigation/:navigation_tab' })
 
 App.ApplicationRoute = Ember.Route.extend()
@@ -67,21 +68,22 @@ App.GameRoute = Ember.Route.extend(
       into: 'game',
       controller: @controllerFor("navigation")
     })
-    @render('monsters', {
-      outlet: 'monsters',
-      into: 'game',
-      controller: @controllerFor("monsters")
-    })
-    @render('items', {
-      outlet: 'store',
-      into: 'game',
-      controller: @controllerFor("items")
-    })
 )
 
-App.GamePurchaseRoute = Ember.Route.extend(
-  setupController: (controller, params) ->
-    @_super(this, arguments)
-    controller.set("activeTab", params.purchase_tab)
+
+App.PurchasesMonstersRoute = Ember.Route.extend(
+
+    setupController: (controller, model) ->
+      @_super controller, model
+      #Load monsters
+      mons = @store.find('Monster')
+      controller.set('content', mons)
 )
 
+App.PurchasesItemsRoute = Ember.Route.extend(
+    setupController: (controller, model) ->
+      @_super controller, model
+      #Load monsters
+      items = @store.find('Item')
+      controller.set('content', items)
+)

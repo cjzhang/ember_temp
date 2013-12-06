@@ -1,0 +1,6 @@
+%div{:bind => {:class =>":item id", :title => "description"}}
+  .icon
+  %label.name
+    {{name}} (owned: {{count}})
+  .button{:_action => 'use'}
+    Use
