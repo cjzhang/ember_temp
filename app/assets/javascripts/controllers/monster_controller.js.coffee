@@ -14,7 +14,7 @@ App.MonsterController = Ember.ObjectController.extend(
       if gameController.get("count") > @get('cost')
         gameController.get("game").decrementProperty('count', @get('cost'))
         @incrementProperty('count')
-        gameController.setNotice("Congratulations on your new " + @get("name").toLowerCase() + ".")
+        @get("model").save()
         gameController.recalculate()
 
     }

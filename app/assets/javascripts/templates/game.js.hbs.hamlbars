@@ -20,7 +20,10 @@
     {{outlet "navigation"}}
 
   .purchases
-    .store
-      {{outlet "store"}}
-    {{outlet "monsters"}}
+    %ul.menu
+      %li
+        {{#linkTo 'purchases.monsters'}}Monsters{{/linkTo}}
+      %li
+        {{#linkTo 'purchases.items'}}Items{{/linkTo}}
+    {{outlet}}
 

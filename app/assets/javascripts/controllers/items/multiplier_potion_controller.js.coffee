@@ -1,16 +1,13 @@
 App.MultiplierPotionController = App.ItemController.extend(
-
-  #item is stored as @content and can straightup use @get
-  #Also multiplier potions are used immediately
-  buy: ->
-    if @_super()
+   
+  actions: { 
+    use: ->
       @activate()
-    
-  use: ->
-    @activate()
-
+  }
+  
   activate: ->
     @decrementProperty('count', 1)
+    @get("model").save
     effect = @store.createRecord(App.Modifier, {
       name: "Feeling Multiplicative"
       description: "Your monsters are producing eggs twice as fast."

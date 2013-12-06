@@ -1,8 +1,14 @@
 # For more information see: http://emberjs.com/guides/routing/
 
 #TODO refactor game to have monsters nested after it (/game/:game_id/monsters and /game/:game_id/items)
-App.Router.map ()->
-  @route 'game', { path: '/game/:game_id' }
+App.Router.map () ->
+  @resource 'game', { path: '/game/:game_id' }, ->
+    #or better with purchase resource (and purchaseindex tab) and then
+    #routes (monsters, items) beneath that
+    @resource 'purchases', {path: '/purchases'}, ->
+      @route 'monsters', {path: '/monsters'}
+      @route 'items', {path: '/items'}
+    @route('navigation', { path: '/navigation/:navigation_tab' })
 
 App.ApplicationRoute = Ember.Route.extend()
 
@@ -62,15 +68,22 @@ App.GameRoute = Ember.Route.extend(
       into: 'game',
       controller: @controllerFor("navigation")
     })
-    @render('monsters', {
-      outlet: 'monsters',
-      into: 'game',
-      controller: @controllerFor("monsters")
-    })
-    @render('items', {
-      outlet: 'store',
-      into: 'game',
-      controller: @controllerFor("items")
-    })
 )
 
+
+App.PurchasesMonstersRoute = Ember.Route.extend(
+
+    setupController: (controller, model) ->
+      @_super controller, model
+      #Load monsters
+      mons = @store.find('Monster')
+      controller.set('content', mons)
+)
+
+App.PurchasesItemsRoute = Ember.Route.extend(
+    setupController: (controller, model) ->
+      @_super controller, model
+      #Load monsters
+      items = @store.find('Item')
+      controller.set('content', items)
+)
