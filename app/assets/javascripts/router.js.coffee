@@ -14,7 +14,7 @@ App.ApplicationRoute = Ember.Route.extend()
 
 App.IndexRoute = Ember.Route.extend(
   beforeModel: ->
-    @transitionTo('game', App.Game.find(2))
+    @transitionTo('purchases.monsters', App.Game.find(1))
 )
 
 App.GameRoute = Ember.Route.extend(

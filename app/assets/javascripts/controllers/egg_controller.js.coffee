@@ -16,7 +16,6 @@ App.EggController = Ember.ObjectController.extend(
     if @currentMonster.get('exp') >= @get('levelUpCost')
       @currentMonster.incrementProperty('exp', - @get('levelUpCost'))
       @currentMonster.incrementProperty('level')
-      @get("controllers.game").recalculate()
   ).observes('currentMonster', 'currentMonster.exp')
   
   levelUpCost: (->

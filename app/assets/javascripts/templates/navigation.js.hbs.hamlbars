@@ -1,4 +1,6 @@
 %ul.navigation-options
+  %li#log{:_action => 'toggle "log"', :bind => {:class => "logActive:active:inactive"}}
+    LOG
   %li#statistics{:_action => 'toggle "statistics"', :bind => {:class => "statsActive:active:inactive"}}
     STATS
   %li#menu{:_action => 'toggle "menu"', :bind => {:class => "menuActive:active:inactive"}}
@@ -7,6 +9,8 @@
     ABOUT
   
 
+#log{:bind => {:class => "logActive:active:inactive"}}
+  {{view App.LogView}}
 #statistics{:bind => {:class => "statsActive:active:inactive"}}
   {{view App.StatisticsView}}
 #menu{:bind => {:class => "menuActive:active:inactive"}}

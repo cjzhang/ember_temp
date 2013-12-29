@@ -4,3 +4,15 @@ STATS, EH?
   {{prettyNumber controllers.game.game.lifetimeCount}} total eggs obtained
 %p
   {{prettyNumber controllers.game.game.lifetimeExp}} total exp gained
+
+%p
+  Eventually you will be able to view your upgrades
+
+%p
+  And your total clicks
+
+%p
+  And some information about which quests you've completed.
+
+%p
+  And how many eggs you've hatched or something, I dunno.
