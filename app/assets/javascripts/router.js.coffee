@@ -11,16 +11,86 @@ App.Router.map () ->
       @route 'upgrades', {path: '/upgrades'}
     @route('navigation', { path: '/navigation/:navigation_tab' })
 
-App.ApplicationRoute = Ember.Route.extend()
+App.ApplicationRoute = Ember.Route.extend(
+
+  #Takes all the game data, turns it into a json hash, 
+  #and shoves it in localStorage.
+  #Structure:
+  # {
+  #  modelName: [{id: 1, attribute: value, attribute2: value}]
+  # }
+  actions: {
+    save: ->
+      data = {}
+      blueprint = {
+        "game": ["playerName", "count", "lifetimeCount", "lifetimeExp"]
+        "item": ["numAvailable", "unlocked", "count"]
+      }
+      
+      keys = Object.keys(blueprint)
+
+      for key in keys
+        desiredAttrs = blueprint[key]
+
+        models = @store.find(key)
+        
+        models.forEach( (model) ->
+          data[model.constructor] ||= []
+
+          attrs = {id: model.get("id")}
+          for attr in desiredAttrs
+            attrs[attr] = model.get(attr)
+
+          data[model.constructor].push(attrs)
+        )
+
+      string = JSON.stringify(data)
+      #string = LZString.compress(string)
+      localStorage.setItem("save", string)
+
+    #Pulls data from local storage. 
+    #model = the first key, then iterates over the objects that were
+    #saved and overwrites the attributes in the store as appropriate
+    loadSave: ->
+      return unless localStorage && localStorage.getItem("save")
+      string = localStorage.getItem("save")
+      #string = LZString.decompress(string)
+      data = JSON.parse(string)
+      currentStore = @store
+
+      updateValues = (models) ->
+        currentStore 
+        models.forEach((model) ->
+          attrs = data[model.constructor].find((x) ->
+            x["id"] == model.get("id")
+          )
+          
+          for attr in Object.keys(attrs)
+            continue if attr == "id"
+            model.set(attr, attrs[attr])
+          
+          model.save()
+          
+        )
+        
+        currentStore.commit()
+
+      #@store.find("game").then(updateValues)
+      @store.find("item").then(updateValues)
+
+      false
+  }
+
+)
 
 App.IndexRoute = Ember.Route.extend(
   beforeModel: ->
-    @transitionTo('purchases.monsters', App.Game.find(1))
+    @transitionTo('purchases.monsters', @store.find("game", 1))
 )
 
 App.GameRoute = Ember.Route.extend(
   model: (params) ->
-    return App.Game.find(params.game_id)
+    return @store.find("game", params.game_id)
   setupController: (controller, model) ->
     @_super controller, model
 
@@ -34,7 +104,7 @@ App.GameRoute = Ember.Route.extend(
     setIntervalWithContext((-> @tick()), 1000, controller)
 
     #Load monsters
-    mons = App.Monster.find()
+    mons = @store.find("monster")
     monstersController = @controllerFor("monsters")
     monstersController.set('content', mons)
 
@@ -44,10 +114,13 @@ App.GameRoute = Ember.Route.extend(
     #TODO FIXME refactor controller to depend on gamecontroller and do logic through there
     eggController = @controllerFor("egg")
     eggController.set('game', model)
-    eggController.set('currentMonster', @store.find("monster", "egg"))
+
+    @store.find("monster", "egg").then((mon) ->
+      eggController.set('currentMonster', mon)
+    )
 
     #TODO FIXME refactor: this may be poorly named??
-    items = App.Item.find()
+    items = @store.find("item")
     itemsController = @controllerFor("items")
     itemsController.set('content', items)
     controller.set('items', items)

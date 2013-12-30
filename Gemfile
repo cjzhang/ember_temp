@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'ember-rails'
 gem 'ember-source', '1.2.0'
+gem 'ember-data-source', "<= 0.14"
 gem 'emblem-rails'
 gem 'haml-rails'
 gem 'hamlbars', '~> 2.0'

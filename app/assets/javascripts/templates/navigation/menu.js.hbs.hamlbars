@@ -2,4 +2,8 @@ a menu is me
 
 %ul
   here there will be a way to save your dumb game
+  .button{:_action => 'save'}
+    SAVE ME
 
+  .button{:_action => 'loadSave'}
+    LOAD ME
