@@ -8,16 +8,30 @@ App.Monster = DS.Model.extend(
   description: DS.attr()
   imageUrl: DS.attr()
   modifiers: DS.hasMany('App.Modifier')
-  count: DS.attr(undefined, {defaultValue: 0})
-  exp: DS.attr(undefined, {defaultValue: 0})
-  level: DS.attr(undefined, {defaultValue: 0})
+  count: DS.attr('number', {defaultValue: 0})
+  #-1 means unlimited
+  numAvailable: DS.attr('number', {defaultValue: -1})
+  exp: DS.attr('number', {defaultValue: 0})
+  level: DS.attr('number', {defaultValue: 0})
+  totalExp: DS.attr('number', {defaultValue: 0})
+  eggsEarned: DS.attr('number', {defaultValue: 0})
 
-  #TODO refactor: where should computed properties live?
   perSecond: (->
-    @get('basePerSecond') + @get('basePerSecond') * @get('level') * @get('levelEffectiveness')
+    basePerSecond = @get('basePerSecond')
+    multiplier = 1 
+    multiplier += @get('level') * @get('levelEffectiveness')
+    @get('modifiers').filterBy("appliesTo", "tick").forEach( (modifier) ->
+      switch(modifier.get("type"))
+        when "multiply"
+          multiplier *= modifier.get("amount")
+    )
+    return basePerSecond * multiplier
+  ).property('level', 'modifiers.@each.active', "modifiers")
 
-  ).property('level')
-
+  totalPerSecond: (->
+    @get('perSecond') * @get('count')
+  ).property('count', 'perSecond')
+  
   #lol
   displayLevel: (->
     @get('level') + 1
@@ -26,6 +40,10 @@ App.Monster = DS.Model.extend(
   selectable: (->
     @get('count') > 0
   ).property('count')
+
+  purchasable: (->
+    @get('numAvailable') != 0
+  ).property('numAvailable')
 )
 
 

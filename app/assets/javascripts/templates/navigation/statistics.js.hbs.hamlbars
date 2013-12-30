@@ -1,6 +1,9 @@
 STATS, EH?
 
 %p
+  Click power (targeting {{controllers.egg.currentMonster.name}}): {{prettyNumber controllers.egg.perClick}}
+
+%p
   {{prettyNumber controllers.game.game.lifetimeCount}} total eggs obtained
 %p
   {{prettyNumber controllers.game.game.lifetimeExp}} total exp gained

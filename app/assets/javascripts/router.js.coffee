@@ -44,6 +44,7 @@ App.GameRoute = Ember.Route.extend(
     #TODO FIXME refactor controller to depend on gamecontroller and do logic through there
     eggController = @controllerFor("egg")
     eggController.set('game', model)
+    eggController.set('currentMonster', @store.find("monster", "egg"))
 
     #TODO FIXME refactor: this may be poorly named??
     items = App.Item.find()
@@ -51,6 +52,7 @@ App.GameRoute = Ember.Route.extend(
     itemsController.set('content', items)
     controller.set('items', items)
 
+    @store.find("modifier")
     
   actions: {
     buy: (object)->

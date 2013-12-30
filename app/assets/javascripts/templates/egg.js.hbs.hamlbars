@@ -1,8 +1,15 @@
 %img{:bind => {:src => 'imageUrl', :height => 'height', :width => 'width'}}
 
-{{#if currentMonster}}
-%p
-  Level {{currentMonster.displayLevel}}
-%p
-  {{currentMonster.exp}}/{{levelUpCost}}
+{{#if showLevel}}
+.level-info
+  %p
+    {{currentMonster.name}} ({{currentMonster.count}} of them)
+  %p
+    Level {{currentMonster.displayLevel}}
+  %p
+    {{currentMonster.exp}}/{{levelUpCost}}
+  %p
+    {{prettyNumber currentMonster.eggsEarned}} total eggs earned
+  %p
+    Currently laying eggs at a rate of {{prettyNumber currentMonster.totalPerSecond}} eggs per second.
 {{/if}}

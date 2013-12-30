@@ -7,6 +7,8 @@ App.Upgrade = DS.Model.extend(
   purchased: DS.attr("boolean", {defaultValue: false})
   modifier: DS.belongsTo('App.Modifier')
   description: DS.attr()
+  unlockCondition: DS.attr()
+  unlockValue: DS.attr()
   
   purchasable: (->
     @get('unlocked') && !@get('purchased')

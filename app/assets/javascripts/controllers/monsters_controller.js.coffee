@@ -5,3 +5,5 @@ App.MonstersController = Ember.ArrayController.extend(
   selectMonster: (monster) ->
     @get("controllers.egg").selectMonster(monster)
   )
+
+

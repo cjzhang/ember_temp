@@ -12,7 +12,7 @@ App.GameController = Ember.ObjectController.extend(
     )
 
     #active modifiers do various things
-    @game.get("modifiers").forEach( ((modifier) ->
+    @game.get("modifiers").filterBy("appliesTo", "tick").forEach( ((modifier) ->
       switch(modifier.get("type"))
         when "multiply"
           perSecondMultiplierTotal *= modifier.get("amount")
@@ -20,7 +20,7 @@ App.GameController = Ember.ObjectController.extend(
 
     return perSecondTotal * perSecondMultiplierTotal
 
-    ).property("game.modifiers.length", "game.monsters.@each.count", 
+    ).property("game.modifiers", "game.monsters.@each.count", 
     "game.monsters.@each.perSecond")
 
   init: ->
@@ -40,22 +40,35 @@ App.GameController = Ember.ObjectController.extend(
   tick: ->
     @game.incrementProperty('count', @get('perSecond'))
     @game.incrementProperty('lifetimeCount', @get('perSecond'))
+    
+    @game.get("monsters").forEach( (mon) ->
+      mon.incrementProperty("eggsEarned", mon.get("totalPerSecond"))
+    )
+
     @game.get("modifiers").forEach((modifier, index) ->
       if (modifier.get("ticksRemaining") > 0)
         modifier.decrementProperty('ticksRemaining')
+
         if (modifier.get("ticksRemaining") == 0)
-          modifier.deleteRecord()
-          @store.commit()
+          modifier.deleteRecord()        
     , this)
+
+    @store.commit()
 
   addModifier: (modifier) ->
     @game.get("modifiers").pushObject(modifier)
     @game.save()
 
-  attemptPurchase: (cost) ->
-    amount = @game.get("count").toFixed(4)
-    return false if amount < cost
-
-    @game.decrementProperty("count", cost)
-    return true
+  unlockUpgrade: (upgrade) ->
+    upgrade.set("unlocked", true)
+    upgrade.save()
+    @logMessage(upgrade.get('name') + " is available for purchase at the upgrade shop.")
+  
+  attemptPurchase: (cost) ->    
+    if @game.get("count") < cost
+      return false 
+    else
+      @game.decrementProperty("count", cost)
+      @game.save()
+      return true
 )

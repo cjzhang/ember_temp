@@ -4,6 +4,8 @@ App.Modifier.FIXTURES = [
   description: "You find one more egg per click."
   type: "add"
   amount: 1
+  monster: "egg"
+  appliesTo: "click"
   }
   ,
   {id: "pidgeyGrowth0"
@@ -11,6 +13,7 @@ App.Modifier.FIXTURES = [
   description: "Your pidgeys lay eggs twice as quickly."
   type: "multiply"
   amount: 2
-  monster: "pidgeon"
+  monster: "pidgey"
+  appliesTo: "tick"
   }
 ]

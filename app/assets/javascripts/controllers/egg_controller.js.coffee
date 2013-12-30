@@ -6,6 +6,10 @@ App.EggController = Ember.ObjectController.extend(
   game: null
   currentMonster: null
   
+  showLevel: (->
+    @currentMonster.id != "egg"
+  ).property("currentMonster")
+
   #computed properties are not functions
   perClick: (->
     base = @game.get("basePerClick")
@@ -23,38 +27,35 @@ App.EggController = Ember.ObjectController.extend(
   ).property("game.basePerClick", "currentMonster")
   
   expObserver: (->
-    return unless @currentMonster
-    if @currentMonster.get('exp') >= @get('levelUpCost')
-      @currentMonster.incrementProperty('exp', - @get('levelUpCost'))
+    while @currentMonster.get('exp') >= @get('levelUpCost')
+      @currentMonster.decrementProperty('exp', @get('levelUpCost'))
       @currentMonster.incrementProperty('level')
-  ).observes('currentMonster', 'currentMonster.exp')
+      @currentMonster.save()
+  ).observes('currentMonster', 'currentMonster.totalExp')
   
   levelUpCost: (->
-    return unless @currentMonster
     Math.ceil(@currentMonster.get("baseExpRequired") * Math.pow(@currentMonster.get('growthRate'), @currentMonster.get('level')))
   ).property('currentMonster', 'currentMonster.level')
   
   selectMonster: (monster) ->
-    if monster
-      @set("imageUrl", monster.get("imageUrl"))
-      @set("currentMonster", monster)
-    else
-      @resetMonster()
-      
-  resetMonster: ->
-    @set("imageUrl", "/images/placeholder_egg_shadowthrust_devart.png")
-    @set("currentMonster", null)
+    @set("imageUrl", monster.get("imageUrl"))
+    @set("currentMonster", monster)
     
   #Provides XP to the monster if a monster is selected.
   #Provides eggs otherwise
-  click: ->
-    if @currentMonster
-      @currentMonster.incrementProperty('exp', @get('perClick'))
-      @game.set('lifetimeExp', @game.get('lifetimeExp') + @get('perClick'))
-    else
+  click: ->    
+    if @currentMonster.id == "egg"
       @game.incrementProperty('count', @get('perClick'))
       @game.incrementProperty('lifetimeCount', @get('perClick'))
+    else
+      @game.incrementProperty('lifetimeExp', @get('perClick'))
 
+    @currentMonster.incrementProperty('exp', @get('perClick'))
+    @currentMonster.incrementProperty('totalExp', @get('perClick'))
+    @currentMonster.save()
+
+  #These refer to modifiers that belong to clickyness.
   getModifiers: ->
-    @store.find("modifier").filterProperty("active")
+    @currentMonster.get("modifiers").filterProperty("active").filterBy("appliesTo", "click")
+    
 )

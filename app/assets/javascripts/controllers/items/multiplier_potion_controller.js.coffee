@@ -23,6 +23,7 @@ App.MultiplierPotionController = App.ItemController.extend(
         ticksRemaining: 20
         type: "multiply"
         amount: 2
+        appliesTo: "tick"
       })
       @get("controllers.game").addModifier(effect)
 

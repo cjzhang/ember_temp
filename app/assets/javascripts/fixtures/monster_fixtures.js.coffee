@@ -1,12 +1,24 @@
 App.Monster.FIXTURES = [
-  {id: "pidgeon"
-  name: "Pidgeon"
-  baseCost: 10
-  basePerSecond: 0.2
+  {id: "egg"
+  name: "None"
+  baseCost: 0
+  basePerSecond: 0
+  baseExpRequired: 1000
+  growthRate: 1.5
+  levelEffectiveness: 0
+  numAvailable: 0
+  count: 1
+  description: "An egg. Sometimes it wobbles."
+  imageUrl: "/images/placeholder_egg_shadowthrust_devart.png"
+  }
+  {id: "pidgey"
+  name: "Pidgey"
+  baseCost: 20
+  basePerSecond: 0.1
   baseExpRequired: 50
   growthRate: 1.15
-  levelEffectiveness: .5
-  description: "It's a pidgeon! It lays eggs."
+  levelEffectiveness: 1
+  description: "It's a pidgey! Its eggs aren't worth very much, but at least it's cheap to buy."
   imageUrl: "/images/placeholder_pidgey_bulbapedia.png"
   }
   ,
@@ -47,7 +59,7 @@ App.Monster.FIXTURES = [
   baseExpRequired: 50
   growthRate: 1.15
   levelEffectiveness: 0.05
-  description: "A parakeet. You're sure you can trade its eggs for loads of pidgeon eggs!"
+  description: "A parakeet. You're sure you can trade its eggs for loads of pidgey eggs!"
   imageUrl: "/images/x.png"}
   ,
   {id: "cobra"

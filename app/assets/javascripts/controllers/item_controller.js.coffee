@@ -7,8 +7,7 @@ App.ItemController = Ember.ObjectController.extend(
   
   buy: ->
     gameController = @get('controllers.game')
-    if gameController.get("count") > @get('cost')
-      gameController.get("game").decrementProperty('count', @get('cost'))
+    if gameController.attemptPurchase(@get('cost'))
       gameController.logMessage("You bought a " + @get('name') + "!") 
       @incrementProperty('count')
       @decrementProperty('numAvailable')

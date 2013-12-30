@@ -1,4 +1,6 @@
 .monsters
   {{#each monster in controller}}
+  {{#if monster.purchasable}}
   {{view App.MonsterView content=monster}}
+  {{/if}}
   {{/each}}
