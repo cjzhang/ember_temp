@@ -6,7 +6,7 @@ App.Item.FIXTURES = [
   controllerName: "multiplierPotion"
   numAvailable: 10
   unlocked: true
-  description: "+100% eggs per second for 20 seconds"
+  description: "x2 eggs per second for 20 seconds"
   }
 ]
 

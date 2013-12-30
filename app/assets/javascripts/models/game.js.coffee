@@ -13,6 +13,5 @@ App.Game = DS.Model.extend(
   perSecondMultiplier: DS.attr('number', {defaultValue: 1})
   modifiers: DS.hasMany('App.Modifier')
 
-  #TODO refactor is there a better way to do this??
   monsters: []
 )

@@ -8,14 +8,22 @@ App.MultiplierPotionController = App.ItemController.extend(
   activate: ->
     @decrementProperty('count', 1)
     @get("model").save
-    effect = @store.createRecord(App.Modifier, {
-      name: "Feeling Multiplicative"
-      description: "Your monsters are producing eggs twice as fast."
-      active: true
-      ticksRemaining: 20
-      type: "perSecondMultiplier"
-      amount: 1
-    })
-    @get("controllers.game").addModifier(effect)
+    
+    mods = @get("controllers.game.modifiers")
+    existingEffect = mods.findBy("name", "Feeling Multiplicative")
+
+    if existingEffect
+      existingEffect.incrementProperty("ticksRemaining", 20)
+      existingEffect.save()
+    else
+      effect = @store.createRecord(App.Modifier, {
+        name: "Feeling Multiplicative"
+        description: "Your monsters are producing eggs twice as fast."
+        active: true
+        ticksRemaining: 20
+        type: "multiply"
+        amount: 2
+      })
+      @get("controllers.game").addModifier(effect)
 
 )

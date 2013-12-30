@@ -8,7 +8,7 @@ TODO LIST (in rough order)
 ==========
 
 
-Upgrades.
+More upgrades.
 
 Quests.
 

@@ -8,6 +8,7 @@ App.Router.map () ->
     @resource 'purchases', {path: '/purchases'}, ->
       @route 'monsters', {path: '/monsters'}
       @route 'items', {path: '/items'}
+      @route 'upgrades', {path: '/upgrades'}
     @route('navigation', { path: '/navigation/:navigation_tab' })
 
 App.ApplicationRoute = Ember.Route.extend()
@@ -50,6 +51,7 @@ App.GameRoute = Ember.Route.extend(
     itemsController.set('content', items)
     controller.set('items', items)
 
+    
   actions: {
     buy: (object)->
       @controllerFor("game").buy(object)
@@ -86,4 +88,12 @@ App.PurchasesItemsRoute = Ember.Route.extend(
       #Load monsters
       items = @store.find('Item')
       controller.set('content', items)
+)
+
+App.PurchasesUpgradesRoute = Ember.Route.extend(
+    setupController: (controller, model) ->
+      @_super controller, model
+      #Load monsters
+      upgrades = @store.find('Upgrade')
+      controller.set('content', upgrades)
 )

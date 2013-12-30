@@ -1,0 +1,13 @@
+#upgrades
+  %p.upgrade-intro
+    Here you can buy permanent gear that'll upgrade the efficiency of your pokemans.
+  {{#if controller.hasPurchasableItems}}
+  {{#each upgrade in controller}}
+  {{#if upgrade.purchasable}}
+  {{view App.ItemView content=upgrade}}
+  {{/if}}
+  {{/each}}
+  {{else}}
+  .no-items
+    Actually, it looks like there isn't anything here to buy.
+  {{/if}}

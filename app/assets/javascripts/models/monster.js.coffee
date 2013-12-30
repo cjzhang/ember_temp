@@ -7,9 +7,10 @@ App.Monster = DS.Model.extend(
   levelEffectiveness: DS.attr()
   description: DS.attr()
   imageUrl: DS.attr()
-  count: 0
-  exp: 0
-  level: 0
+  modifiers: DS.hasMany('App.Modifier')
+  count: DS.attr(undefined, {defaultValue: 0})
+  exp: DS.attr(undefined, {defaultValue: 0})
+  level: DS.attr(undefined, {defaultValue: 0})
 
   #TODO refactor: where should computed properties live?
   perSecond: (->

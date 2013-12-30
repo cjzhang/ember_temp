@@ -1,6 +1,4 @@
 App.PurchasesItemsController = Ember.ArrayController.extend(
-  needs: ['game']
-
   lookupItemController: (object) ->
     object.get("controllerName")
     

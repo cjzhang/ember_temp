@@ -8,8 +8,19 @@ App.EggController = Ember.ObjectController.extend(
   
   #computed properties are not functions
   perClick: (->
-    @game.get("perClick")
-  ).property("game.perClick")
+    base = @game.get("basePerClick")
+    multiplier = 1
+
+    @getModifiers().forEach((mod) ->
+      switch(mod.get("type"))
+        when "multiply"
+          multiplier *= mod.get("amount")
+        when "add"
+          base += mod.get("amount")
+    )
+
+    return base * multiplier
+  ).property("game.basePerClick", "currentMonster")
   
   expObserver: (->
     return unless @currentMonster
@@ -43,5 +54,7 @@ App.EggController = Ember.ObjectController.extend(
     else
       @game.incrementProperty('count', @get('perClick'))
       @game.incrementProperty('lifetimeCount', @get('perClick'))
- 
+
+  getModifiers: ->
+    @store.find("modifier").filterProperty("active")
 )

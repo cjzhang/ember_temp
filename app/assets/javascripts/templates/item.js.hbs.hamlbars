@@ -3,6 +3,9 @@
   %label.name
     {{name}}
   .cost
-    Cost (available: {{numAvailable}}): {{prettyNumber cost}} eggs
+    Cost
+    = hb 'if numAvailable' do
+      (available: {{numAvailable}})
+    \: {{prettyNumber cost}} eggs
   .description
     {{description}}

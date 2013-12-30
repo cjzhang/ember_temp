@@ -25,5 +25,7 @@
         {{#linkTo 'purchases.monsters'}}Monsters{{/linkTo}}
       %li
         {{#linkTo 'purchases.items'}}Items{{/linkTo}}
+      %li
+        {{#linkTo 'purchases.upgrades'}}Upgrades{{/linkTo}}
     {{outlet}}
 

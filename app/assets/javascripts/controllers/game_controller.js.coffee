@@ -14,8 +14,8 @@ App.GameController = Ember.ObjectController.extend(
     #active modifiers do various things
     @game.get("modifiers").forEach( ((modifier) ->
       switch(modifier.get("type"))
-        when "perSecondMultiplier"
-          perSecondMultiplierTotal += modifier.get("amount")
+        when "multiply"
+          perSecondMultiplierTotal *= modifier.get("amount")
     ))
 
     return perSecondTotal * perSecondMultiplierTotal
@@ -51,4 +51,11 @@ App.GameController = Ember.ObjectController.extend(
   addModifier: (modifier) ->
     @game.get("modifiers").pushObject(modifier)
     @game.save()
+
+  attemptPurchase: (cost) ->
+    amount = @game.get("count").toFixed(4)
+    return false if amount < cost
+
+    @game.decrementProperty("count", cost)
+    return true
 )

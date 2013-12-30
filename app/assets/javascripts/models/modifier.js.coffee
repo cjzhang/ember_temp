@@ -1,11 +1,12 @@
 App.Modifier = DS.Model.extend({
   name: DS.attr()
   description: DS.attr()
-  active: DS.attr('boolean', {defaultValue: true})
+  active: DS.attr('boolean', {defaultValue: false})
   ticksRemaining: DS.attr('number', {defaultValue: -1})
   type: DS.attr()
   amount: DS.attr()
   game: DS.belongsTo('App.Game')
+  monster: DS.belongsTo('App.Monster')
   
   canBeApplied: (->
     return false unless @get("active")
