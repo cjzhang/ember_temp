@@ -7,10 +7,11 @@ A thing to learn Ember with. Also a clicky game.
 TODO LIST (in rough order)
 ==========
 
+Saving. Probs just gonna shove it into local storage.
 
-More upgrades.
+Content? Need more upgrades and items, need images for the extra mons, need the reskin to make it pokemon themed. Need to make the base numbers harder now that there's upgrades and stuff that make it easier.
 
-Quests.
+Quests. Some sort of gambling system rolled in as part of them, maybe.
 
 Refactor things (everything) to be more clean.
 
@@ -24,11 +25,6 @@ Add more CSS to make things look nicer. Make items more pretty.
 
 Shiny pokemans.
 
-Cheevos.
-
-Reskin to just be pokemon, because sure, why not.
-
-Content?
 
 
 Nice to Have
@@ -38,14 +34,12 @@ Menu options, content in the about pane.
 
 Changelog.
 
-More fixtures and flavortext.
+Import/export of saves
 
 More styling on tooltips and the notice/alert message.
 
-Saving and import/export of saves.
-
 Tuning on the actual numbers, yeah right.
 
-Some sort of gambling system (maybe even as part of the quests).
+Cheevos.
 
 Ascension.

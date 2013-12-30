@@ -22,34 +22,34 @@ App.Monster.FIXTURES = [
   imageUrl: "/images/placeholder_pidgey_bulbapedia.png"
   }
   ,
-  {id: "duck"
-  name: "Duck"
+  {id: "farfetchd"
+  name: "Farfetch'd"
   baseCost: 100
   basePerSecond: 0.4
   baseExpRequired: 50
   growthRate: 1.15
   levelEffectiveness: 0.25
-  description: "A duck. Good for eating."
+  description: "A farfetch'd. Good for eating."
   imageUrl: "/images/placeholder_farfetchd_bulbapedia.png"}
   ,
-  {id: "lizard"
-  name: "Lizard"
+  {id: "heliolisk"
+  name: "Heliolisk"
   baseCost: 500
   basePerSecond: 2.0
   baseExpRequired: 50
   growthRate: 1.15
   levelEffectiveness: 0.1
-  description: "Look, flavortext is for suckers. But here's a lizard. It lizzes."
+  description: "Look, flavortext is for suckers. But here's a heliolisk."
   imageUrl: "/images/placeholder_heliolisk_bulbapedia.png"}
   ,
-  {id: "cat"
-  name: "Cat"
+  {id: "meowth"
+  name: "Meowth"
   baseCost: 2000
   basePerSecond: 40
   baseExpRequired: 50
   growthRate: 1.15
   levelEffectiveness: 0.05
-  description: "...What? You're not sure what's going on here but the guy at the store PROMISES that if you buy this cat, you'll get tons of eggs. You don't know what kind of egg he's talking about, but... ????"
+  description: "Not only do meowths lay eggs that are worth significantly more than pidgey eggs, but they'll swipe other pokemon's eggs as well. How convenient!"
   imageUrl: "/images/placeholder_meowth_bulbapedia.png"}
   ,
   {id: "parakeet"
