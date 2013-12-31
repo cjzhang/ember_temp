@@ -16,4 +16,12 @@ App.Modifier.FIXTURES = [
   monster: "pidgey"
   appliesTo: "tick"
   }
+  ,
+  {id: "pidgeyClick0"
+  name: "Gust"
+  type: "multiply"
+  amount: 2
+  monster: "pidgey"
+  appliesTo: "click"
+  }
 ]

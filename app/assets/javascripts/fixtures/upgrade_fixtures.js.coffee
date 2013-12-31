@@ -16,4 +16,14 @@ App.Upgrade.FIXTURES = [
   unlockCondition: "pidgey_quantity"
   unlockValue: 5
   }
+  ,
+  {id: "pidgeyUpgrade1"
+  name:    "Gust"
+  cost:    500
+  unlocked: false
+  modifier: "pidgeyClick0"
+  description: "Your pidgeys gain twice as much experience during training."
+  unlockCondition: "pidgey_quantity"
+  unlockValue: 20
+  }
 ]

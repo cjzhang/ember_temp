@@ -1,6 +1,6 @@
 App.Modifier = DS.Model.extend({
   name: DS.attr()
-  description: DS.attr()
+  description: DS.attr('string', {defaultValue: ""})
   active: DS.attr('boolean', {defaultValue: false})
   ticksRemaining: DS.attr('number', {defaultValue: -1})
   type: DS.attr()
