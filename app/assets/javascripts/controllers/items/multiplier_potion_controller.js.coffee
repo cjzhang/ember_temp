@@ -16,6 +16,7 @@ App.MultiplierPotionController = App.ItemController.extend(
       existingEffect.incrementProperty("ticksRemaining", 20)
       existingEffect.save()
     else
+      #Will get destroyed on reload.
       effect = @store.createRecord(App.Modifier, {
         name: "Feeling Multiplicative"
         description: "Your monsters are producing eggs twice as fast."

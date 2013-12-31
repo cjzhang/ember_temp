@@ -10,6 +10,7 @@ App.Monster.FIXTURES = [
   count: 1
   description: "An egg. Sometimes it wobbles."
   imageUrl: "/images/placeholder_egg_shadowthrust_devart.png"
+  modifiers: ["eggClick0"]
   }
   {id: "pidgey"
   name: "Pidgey"
@@ -20,6 +21,7 @@ App.Monster.FIXTURES = [
   levelEffectiveness: 1
   description: "It's a pidgey! Its eggs aren't worth very much, but at least it's cheap to buy."
   imageUrl: "/images/placeholder_pidgey_bulbapedia.png"
+  modifiers: ["pidgeyTick0"]
   }
   ,
   {id: "farfetchd"

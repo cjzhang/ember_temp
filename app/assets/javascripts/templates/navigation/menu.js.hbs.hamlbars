@@ -2,8 +2,12 @@ a menu is me
 
 %ul
   here there will be a way to save your dumb game
-  .button{:_action => 'save'}
-    SAVE ME
+  .save-actions
+    .button{:_action => 'save'}
+      SAVE ME
 
-  .button{:_action => 'loadSave'}
-    LOAD ME
+    .button{:_action => 'loadSave'}
+      LOAD ME
+
+    .button{:_action => 'clearSave'}
+      CLEAR ME (reload to start anew)

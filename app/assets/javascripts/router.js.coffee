@@ -20,6 +20,9 @@ App.ApplicationRoute = Ember.Route.extend(
   #  modelName: [{id: 1, attribute: value, attribute2: value}]
   # }
   actions: {
+    clearSave: ->
+      localStorage.removeItem("save")
+
     save: ->
       data = {}
       blueprint = {
@@ -65,7 +68,7 @@ App.ApplicationRoute = Ember.Route.extend(
       #string = LZString.decompress(string)
       data = JSON.parse(string)
       currentStore = @store
-      models = ["game", "item", "upgrade", "modifier", "monster"]
+      models = ["game", "item", "monster", "upgrade", "modifier"]
 
       console.log("loading save")
       promises = []
@@ -75,27 +78,24 @@ App.ApplicationRoute = Ember.Route.extend(
       
 
       loadRecords = (records) ->
-
         records.forEach((model) ->
           attrs = data[model.constructor].find((x) ->
             x["id"] == model.get("id")
           )
 
-          for attr in Object.keys(attrs)
-            if attr != "id"
-              model.set(attr, attrs[attr]) 
-              model.save()
-          
-          currentStore.commit()
+          if attrs
+            for attr in Object.keys(attrs)
+              if attr != "id"
+                model.set(attr, attrs[attr]) 
+                model.save()
+           currentStore.commit()
         )
         true
 
       Ember.RSVP.all(promises).then((results) ->
         for recordArray in results
-          debugger
           console.log("trying to load" + recordArray.toString())
           loadRecords(recordArray) 
-        
         true
       )
       

@@ -8,7 +8,7 @@ App.Modifier.FIXTURES = [
   appliesTo: "click"
   }
   ,
-  {id: "pidgeyGrowth0"
+  {id: "pidgeyTick0"
   name: "Sand Nest"
   description: "Your pidgeys lay eggs twice as quickly."
   type: "multiply"

@@ -11,7 +11,7 @@ App.Upgrade.FIXTURES = [
   name:    "Sand Nest"
   cost:    200
   unlocked: false
-  modifier: "pidgeyGrowth0"
+  modifier: "pidgeyTick0"
   description: "Your pidgeys lay eggs twice as quickly."
   unlockCondition: "pidgey_quantity"
   unlockValue: 5

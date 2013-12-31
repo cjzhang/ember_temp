@@ -20,7 +20,7 @@ App.Monster = DS.Model.extend(
     basePerSecond = @get('basePerSecond')
     multiplier = 1 
     multiplier += @get('level') * @get('levelEffectiveness')
-    @get('modifiers').filterBy("appliesTo", "tick").forEach( (modifier) ->
+    @get('modifiers').filterBy("active", true).filterBy("appliesTo", "tick").forEach( (modifier) ->
       switch(modifier.get("type"))
         when "multiply"
           multiplier *= modifier.get("amount")

@@ -12,17 +12,7 @@ App.UpgradeController = Ember.ObjectController.extend(
         modifier.set("active", true)
         monster = modifier.get("monster")
         game = modifier.get("game")
-        
-        #FixtureAdapter and the hasMany relation is basically broken
-        #so we work around it by manually inserting the relation into 
-        #the store because belongsTo relations seem functional
-        if monster
-          monster.get("modifiers").pushObject(modifier)
-          monster.save()
 
-        if game
-          game.get("modifiers").pushObject(modifier)
-          game.save()
         modifier.save()
       )
 
