@@ -6,21 +6,19 @@ App.MonsterController = Ember.ObjectController.extend(
       @get('count'))
   ).property('count')
 
-  quantityUnlocker: (->
-    upgrades = @store.find("upgrade").filterBy("unlocked", false)
+  tryUnlockQuantityUpgrade: ->
+    upgrades = @store.find("upgrade")
+    upgrades.filterBy("unlocked", false)
     quantityUpgrades = upgrades.filterBy("unlockCondition", @get("id") + "_quantity")
-    
-    count = @get("count")
+      
     gameController = @get('controllers.game')
-
+    count = @get('count')
     quantityUpgrades.forEach( (upgrade) ->
       if count >= upgrade.get("unlockValue")
         gameController.unlockUpgrade(upgrade)
     )
-  ).observes('count')
 
-  #TODO refactor this to use the buy action defined in GameRoute
-  #TODO refactor don't access game directly
+  #TODO refactor this to use the buy action defined in GameRoute?
   actions: {
     buy: ->
       gameController = @get('controllers.game')
@@ -28,5 +26,10 @@ App.MonsterController = Ember.ObjectController.extend(
         gameController.logMessage("You bought a " + @get('name') + "!")
         @incrementProperty('count')
         @get("model").save()
-    }
+
+        @tryUnlockQuantityUpgrade()
+
+
+    
+  }
 )

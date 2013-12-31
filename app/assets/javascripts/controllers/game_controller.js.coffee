@@ -60,6 +60,7 @@ App.GameController = Ember.ObjectController.extend(
     @game.save()
 
   unlockUpgrade: (upgrade) ->
+    return if upgrade.get("unlocked") == true
     upgrade.set("unlocked", true)
     upgrade.save()
     @logMessage(upgrade.get('name') + " is available for purchase at the upgrade shop.")

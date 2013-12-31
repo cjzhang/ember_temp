@@ -23,30 +23,38 @@ App.ApplicationRoute = Ember.Route.extend(
     save: ->
       data = {}
       blueprint = {
-        "game": ["playerName", "count", "lifetimeCount", "lifetimeExp"]
-        "item": ["numAvailable", "unlocked", "count"]
+        "App.Game": ["playerName", "count", "lifetimeCount", "lifetimeExp"]
+        "App.Item": ["numAvailable", "unlocked", "count"]
+        "App.Monster": ["count"]
+        "App.Upgrade": ["unlocked", "purchased"]
+        "App.Modifier": ["active"]
       }
       
-      keys = Object.keys(blueprint)
+      keys = ["game", "item", "monster", "upgrade", "modifier"]
+      promises = []
 
       for key in keys
-        desiredAttrs = blueprint[key]
+        promises.push(@store.find(key))
 
-        models = @store.find(key)
-        
-        models.forEach( (model) ->
-          data[model.constructor] ||= []
+        @store.find(key).then((models) ->
+          models.forEach( (model) ->
+            desiredAttrs = blueprint[model.constructor]
+            data[model.constructor] ||= []
 
-          attrs = {id: model.get("id")}
-          for attr in desiredAttrs
-            attrs[attr] = model.get(attr)
+            attrs = {id: model.get("id")}
+            for attr in desiredAttrs
+              attrs[attr] = model.get(attr)
 
-          data[model.constructor].push(attrs)
+            console.log("saving " + model.toString())
+            data[model.constructor].push(attrs)
+          )
         )
 
-      string = JSON.stringify(data)
-      #string = LZString.compress(string)
-      localStorage.setItem("save", string)
+      Ember.RSVP.all(promises).then((p) ->
+        string = JSON.stringify(data)
+        #string = LZString.compress(string)
+        localStorage.setItem("save", string)
+      )
 
     #Pulls data from local storage. 
     #model = the first key, then iterates over the objects that were
@@ -57,26 +65,40 @@ App.ApplicationRoute = Ember.Route.extend(
       #string = LZString.decompress(string)
       data = JSON.parse(string)
       currentStore = @store
+      models = ["game", "item", "upgrade", "modifier", "monster"]
 
-      updateValues = (models) ->
-        currentStore 
-        models.forEach((model) ->
+      console.log("loading save")
+      promises = []
+
+      for x in models
+        promises.push(@store.find(x))
+      
+
+      loadRecords = (records) ->
+
+        records.forEach((model) ->
           attrs = data[model.constructor].find((x) ->
             x["id"] == model.get("id")
           )
-          
-          for attr in Object.keys(attrs)
-            continue if attr == "id"
-            model.set(attr, attrs[attr])
-          
-          model.save()
-          
-        )
-        
-        currentStore.commit()
 
-      #@store.find("game").then(updateValues)
-      @store.find("item").then(updateValues)
+          for attr in Object.keys(attrs)
+            if attr != "id"
+              model.set(attr, attrs[attr]) 
+              model.save()
+          
+          currentStore.commit()
+        )
+        true
+
+      Ember.RSVP.all(promises).then((results) ->
+        for recordArray in results
+          debugger
+          console.log("trying to load" + recordArray.toString())
+          loadRecords(recordArray) 
+        
+        true
+      )
+      
 
       false
   }

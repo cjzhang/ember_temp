@@ -6,6 +6,7 @@ App.Upgrade.FIXTURES = [
   modifier: "eggClick0"
   description: "You find one more egg per click."
   }
+  ,
   {id: "pidgeyUpgrade0"
   name:    "Sand Nest"
   cost:    200

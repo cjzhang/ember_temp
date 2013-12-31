@@ -43,7 +43,7 @@ App.EggController = Ember.ObjectController.extend(
     
   #Provides XP to the monster if a monster is selected.
   #Provides eggs otherwise
-  click: ->    
+  click: ->  
     if @currentMonster.id == "egg"
       @game.incrementProperty('count', @get('perClick'))
       @game.incrementProperty('lifetimeCount', @get('perClick'))
@@ -53,6 +53,7 @@ App.EggController = Ember.ObjectController.extend(
     @currentMonster.incrementProperty('exp', @get('perClick'))
     @currentMonster.incrementProperty('totalExp', @get('perClick'))
     @currentMonster.save()
+    @game.save()
 
   #These refer to modifiers that belong to clickyness.
   getModifiers: ->
