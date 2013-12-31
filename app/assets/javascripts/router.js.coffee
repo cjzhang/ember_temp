@@ -28,9 +28,9 @@ App.ApplicationRoute = Ember.Route.extend(
       blueprint = {
         "App.Game": ["playerName", "count", "lifetimeCount", "lifetimeExp"]
         "App.Item": ["numAvailable", "unlocked", "count"]
-        "App.Monster": ["count"]
+        "App.Monster": ["count", "numAvailable", "exp", "level", "totalExp", "eggsEarned"]
         "App.Upgrade": ["unlocked", "purchased"]
-        "App.Modifier": ["active"]
+        "App.Modifier": ["active", "ticksRemaining"]
       }
       
       keys = ["game", "item", "monster", "upgrade", "modifier"]

@@ -4,7 +4,7 @@ App.Modifier = DS.Model.extend({
   active: DS.attr('boolean', {defaultValue: false})
   ticksRemaining: DS.attr('number', {defaultValue: -1})
   type: DS.attr()
-  amount: DS.attr()
+  amount: DS.attr() #refers to how strong the effect type is
   game: DS.belongsTo('App.Game')
   monster: DS.belongsTo('App.Monster')
   #Whether it applies during a tick (passive income) or a click (active income)
