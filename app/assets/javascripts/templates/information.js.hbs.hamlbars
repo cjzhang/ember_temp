@@ -1,4 +1,4 @@
-%ul.navigation-options
+%ul.information-options
   %li#log{:_action => 'toggle "log"', :bind => {:class => "logActive:active:inactive"}}
     LOG
   %li#statistics{:_action => 'toggle "statistics"', :bind => {:class => "statsActive:active:inactive"}}

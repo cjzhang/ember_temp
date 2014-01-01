@@ -1,4 +1,4 @@
-App.NavigationController = Ember.ObjectController.extend(
+App.InformationController = Ember.ObjectController.extend(
   needs: ["game", "egg"]
   activeTab: "log"
   actions: {

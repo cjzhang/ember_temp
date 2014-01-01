@@ -17,7 +17,7 @@
       {{view App.MonsterSelectorView controller=controllers.monsters}}
 
   .context
-    {{outlet "navigation"}}
+    {{outlet "information"}}
 
   .purchases
     %ul.menu
@@ -27,5 +27,8 @@
         {{#linkTo 'purchases.items'}}Items{{/linkTo}}
       %li
         {{#linkTo 'purchases.upgrades'}}Upgrades{{/linkTo}}
+    %ul.menu
+      %li
+        {{#linkTo 'game.quests'}}Quests{{/linkTo}}
     {{outlet}}
 

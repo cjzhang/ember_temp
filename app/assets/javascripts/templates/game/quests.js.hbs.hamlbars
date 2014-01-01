@@ -1,0 +1,13 @@
+#quests
+  %p.quest-intro
+    A list of available quests.
+  {{#if controller.hasVisibleQuests}}
+  {{#each item in controller}}
+  {{#if item.visible}}
+  {{view App.QuestView content=item}}
+  {{/if}}
+  {{/each}}
+  {{else}}
+  .no-items
+    No quests available at this time. Try doing some interesting things, or something.
+  {{/if}}

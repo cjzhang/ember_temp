@@ -9,7 +9,8 @@ App.Router.map () ->
       @route 'monsters', {path: '/monsters'}
       @route 'items', {path: '/items'}
       @route 'upgrades', {path: '/upgrades'}
-    @route('navigation', { path: '/navigation/:navigation_tab' })
+    @route 'quests', {path: '/quests'}
+    @route('information', { path: '/information/:information_tab' })
 
 App.ApplicationRoute = Ember.Route.extend(
 
@@ -31,9 +32,10 @@ App.ApplicationRoute = Ember.Route.extend(
         "App.Monster": ["count", "numAvailable", "exp", "level", "totalExp", "eggsEarned"]
         "App.Upgrade": ["unlocked", "purchased"]
         "App.Modifier": ["active", "ticksRemaining"]
+        "App.Quest": ["completed", "unlocked"]
       }
       
-      keys = ["game", "item", "monster", "upgrade", "modifier"]
+      keys = ["game", "item", "monster", "upgrade", "modifier", "quest"]
       promises = []
 
       for key in keys
@@ -68,7 +70,7 @@ App.ApplicationRoute = Ember.Route.extend(
       #string = LZString.decompress(string)
       data = JSON.parse(string)
       currentStore = @store
-      models = ["game", "item", "monster", "upgrade", "modifier"]
+      models = ["game", "item", "monster", "upgrade", "modifier", "quest"]
 
       console.log("loading save")
       promises = []
@@ -162,10 +164,10 @@ App.GameRoute = Ember.Route.extend(
       into: 'game',
       controller: @controllerFor("egg")
     })
-    @render('navigation', {
-      outlet: 'navigation',
+    @render('information', {
+      outlet: 'information',
       into: 'game',
-      controller: @controllerFor("navigation")
+      controller: @controllerFor("information")
     })
 )
 
@@ -175,7 +177,7 @@ App.PurchasesMonstersRoute = Ember.Route.extend(
     setupController: (controller, model) ->
       @_super controller, model
       #Load monsters
-      mons = @store.find('Monster')
+      mons = @store.find('monster')
       controller.set('content', mons)
 )
 
@@ -183,7 +185,7 @@ App.PurchasesItemsRoute = Ember.Route.extend(
     setupController: (controller, model) ->
       @_super controller, model
       #Load monsters
-      items = @store.find('Item')
+      items = @store.find('item')
       controller.set('content', items)
 )
 
@@ -191,6 +193,14 @@ App.PurchasesUpgradesRoute = Ember.Route.extend(
     setupController: (controller, model) ->
       @_super controller, model
       #Load monsters
-      upgrades = @store.find('Upgrade')
+      upgrades = @store.find('upgrade')
       controller.set('content', upgrades)
+)
+
+App.GameQuestsRoute = Ember.Route.extend(
+    setupController: (controller, model) ->
+      @_super controller, model
+      #Load monsters
+      quests = @store.find('quest')
+      controller.set('content', quests)
 )

@@ -58,4 +58,4 @@ To add a new upgrade:
 
 
 To add something to be saved:
-1. Shove it in ApplicationRoute.save action's blueprint.
+1. Shove it in ApplicationRoute.save action's blueprint, then the two sets of lower-case keys in the save and load methods.

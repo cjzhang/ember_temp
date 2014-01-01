@@ -1,4 +1,4 @@
 App.StatisticsView = Ember.View.extend(
-  templateName: 'navigation/statistics'
+  templateName: 'information/statistics'
   classNames: ["statistics"]
 )

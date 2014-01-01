@@ -9,6 +9,9 @@ STATS, EH?
   {{prettyNumber controllers.game.game.lifetimeExp}} total exp gained
 
 %p
+  Here is where your current quests would probably go.
+  
+%p
   Eventually you will be able to view your upgrades
 
 %p
