@@ -2,7 +2,7 @@ App.Item = DS.Model.extend(
   name:    DS.attr()
   cost:    DS.attr()
   numAvailable: DS.attr() #available for purchase
-  controllerName: DS.attr()
+  controllerName: DS.attr('string', {defaultValue: "item"})
   unlocked: DS.attr(undefined, {defaultValue: true}) #visibility
   count: DS.attr('number', {defaultValue: 0}) #number owned
   description: DS.attr()

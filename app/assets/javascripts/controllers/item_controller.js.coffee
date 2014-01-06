@@ -1,5 +1,5 @@
 App.ItemController = Ember.ObjectController.extend(
-  needs: ['game']
+  needs: ['game', 'egg']
   
   atLeastOne: (->
     @get("count") > 0
@@ -17,4 +17,7 @@ App.ItemController = Ember.ObjectController.extend(
     else
       gameController.setError("You can't afford that.")
       return false
+
+  use: ->
+    @get("controllers.game").setNotice(@get("description"))
 )

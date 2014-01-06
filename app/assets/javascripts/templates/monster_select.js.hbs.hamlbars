@@ -1,5 +1,5 @@
 %div{:bind => {:class =>":monster view.content.id view.content::none"}}
-  .icon
+  %img{:bind => {:src => 'view.content.spriteUrl'}, :class => "icon"}
   %label.name
     {{#if view.content}}
     {{view.content.name}}

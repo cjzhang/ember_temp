@@ -1,6 +1,6 @@
 App.EggController = Ember.ObjectController.extend(
   needs: ['game']
-  imageUrl: "/images/placeholder_egg_shadowthrust_devart.png"
+  imageUrl: "/images/egg.png"
   height: '200px'
   width: '200px'
   game: null
@@ -48,15 +48,20 @@ App.EggController = Ember.ObjectController.extend(
       @game.incrementProperty('count', @get('perClick'))
       @game.incrementProperty('lifetimeCount', @get('perClick'))
     else
-      @game.incrementProperty('lifetimeExp', @get('perClick'))
+      @addExp(@get('perClick'))
 
-    @currentMonster.incrementProperty('exp', @get('perClick'))
-    @currentMonster.incrementProperty('totalExp', @get('perClick'))
-    @currentMonster.save()
     @game.save()
 
   #These refer to modifiers that belong to clickyness.
   getModifiers: ->
     @currentMonster.get("modifiers").filterProperty("active").filterBy("appliesTo", "click")
     
+  addExp: (amount)->
+    return false if @currentMonster.id == "egg"
+    
+    @game.incrementProperty('lifetimeExp', amount)
+    @game.save()
+    @currentMonster.incrementProperty('exp', amount)
+    @currentMonster.incrementProperty('totalExp', amount)
+    @currentMonster.save()
 )

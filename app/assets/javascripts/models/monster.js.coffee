@@ -6,7 +6,6 @@ App.Monster = DS.Model.extend(
   growthRate: DS.attr()
   levelEffectiveness: DS.attr()
   description: DS.attr()
-  imageUrl: DS.attr()
   modifiers: DS.hasMany('App.Modifier')
   count: DS.attr('number', {defaultValue: 0})
   #-1 means unlimited
@@ -15,6 +14,14 @@ App.Monster = DS.Model.extend(
   level: DS.attr('number', {defaultValue: 0})
   totalExp: DS.attr('number', {defaultValue: 0})
   eggsEarned: DS.attr('number', {defaultValue: 0})
+
+  imageUrl: (->
+    return "/images/" + @get("id") + ".png"
+  ).property()
+
+  spriteUrl: (->
+    return "/images/" + @get("id") + "_sprite.png"
+  ).property()
 
   perSecond: (->
     basePerSecond = @get('basePerSecond')

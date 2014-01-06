@@ -1,5 +1,7 @@
-%img{:bind => {:src => 'imageUrl', :height => 'height', :width => 'width'}}
-
+%img{:bind => {:src => 'imageUrl', :height => 'height', :width => 'width'}, :class => "selected"}
+.description
+  {{currentMonster.description}}
+  
 {{#if showLevel}}
 .level-info
   %p

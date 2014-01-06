@@ -22,7 +22,7 @@
   .purchases
     %ul.menu
       %li
-        {{#linkTo 'purchases.monsters'}}Monsters{{/linkTo}}
+        {{#linkTo 'purchases.monsters'}}Pokemon{{/linkTo}}
       %li
         {{#linkTo 'purchases.items'}}Items{{/linkTo}}
       %li

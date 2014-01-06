@@ -12,8 +12,9 @@ App.MultiplierPotionController = App.ItemController.extend(
     mods = @get("controllers.game.modifiers")
     existingEffect = mods.findBy("name", "Feeling Multiplicative")
 
+    length = @get("effectAmount")
     if existingEffect
-      existingEffect.incrementProperty("ticksRemaining", 20)
+      existingEffect.incrementProperty("ticksRemaining", length)
       existingEffect.save()
     else
       #Will get destroyed on reload.
@@ -21,7 +22,7 @@ App.MultiplierPotionController = App.ItemController.extend(
         name: "Feeling Multiplicative"
         description: "Your monsters are producing eggs twice as fast."
         active: true
-        ticksRemaining: 20
+        ticksRemaining: length
         type: "multiply"
         amount: 2
         appliesTo: "tick"

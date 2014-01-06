@@ -26,7 +26,8 @@
 .game
   overflow: hidden
   border-bottom: 1px solid
-  
+
+//The left column, mostly
 .clicky, .context, .purchases
   border: 1px solid
   float: left
@@ -34,14 +35,15 @@
   margin-bottom: -100%
   padding-bottom: 100%
 
-.clicky img
+.clicky img.selected
   margin-left: auto
   margin-right: auto
   display: block
   padding: 40px 0px 40px 0px
 
-.clicky .level-info
-  text-align: center
+.clicky 
+  .level-info, .description
+    text-align: center
 
 .monsters-selector
   padding-left: 10px
@@ -58,20 +60,7 @@
   border: 1px solid
   min-height: 75px
 
-.monster.pidgey .icon
-  background-color: #33CCCC
-  
-.monster.farfetchd .icon
-  background-color: #996699
-  
-.monster.heliolisk .icon
-  background-color: #006633
-  
-.monster.meowth .icon
-  background-color: #FFCC00
-
 .monster .icon
-  height: 75px
   width: 75px
   float: left
   
@@ -80,6 +69,7 @@
     text-align: center
     border: 1px solid
 
+//The center column with stats
 .information ul, .purchases ul
   padding: 0px
   margin: 0px
@@ -97,9 +87,10 @@
   background-color: #F0F0F0
 
 #log-messages
-  height: 400px
+  max-height: 500px
   overflow-y: scroll
   
+// The right column, for buying things and junk
 .purchases .menu
   border: 1px solid
  
@@ -110,3 +101,11 @@
   
 .purchases .item
   border: 1px solid
+
+.purchases
+  #store
+    max-height: 400px
+    overflow-y: scroll
+  #inventory
+    height: 200px
+    overflow-y: scroll

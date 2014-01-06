@@ -2,10 +2,10 @@
   .icon
   %label.name
     {{name}}
-  .cost
-    Cost
     = hb 'if numAvailable' do
       (available: {{numAvailable}})
+  .cost
+    Cost
     \: {{prettyNumber cost}} eggs
   .description
     {{description}}
