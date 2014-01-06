@@ -1,4 +1,7 @@
 .monsters
+  .intro
+    A pokemon store. Labelled pokeballs lie in display cases with price tags attached. A sign by the register says, "Stocks vary. Come back later if the pokemon you want isn't here yet."
+
   {{#each monster in controller}}
   {{#if monster.purchasable}}
   {{view App.MonsterView content=monster}}
