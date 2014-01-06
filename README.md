@@ -7,8 +7,6 @@ A thing to learn Ember with. Also a clicky game.
 TODO LIST (in rough order)
 ==========
 
-item boxes - maybe? as quest rewards
-
 more levelQuests (get A, B, C mons to level Y)
 
 Quests. Some sort of gambling system rolled in as part of them, maybe.
@@ -17,17 +15,19 @@ quest and upgrade unlocking based on level
 
 totalLevel quest (get X total levels between your party)
 
-pokemon that can't be bought from the pokemon store (obtained through quests instead)
-
 multiple save files to save to or load from
 
 tradeQuest - take mon of level X and trade it for an unbuyable mon
 
+item boxes - maybe? as quest rewards
+
 quests view needs a selector (so you select the quest to see its description and get the option to complete it)
+
+timedEvents - shop restock (restock to X levels, not just add X amount each time period), quest to add more pokeman to shop, pokemon eggs
 
 trainerQuest - give your potions and pokeballs and start a timedEvent that, when it finishes, deletes X potions and X pokeballs from inventory and adds a pokemon to the pokemon store
 
-timedEvents - shop restock (restock to X levels, not just add X amount each time period), quest to add more pokeman to shop, pokemon eggs
+more pokemon that can't be bought from the pokemon store (obtained through quests instead)
 
 shiny pokemons:
 upgrade to make the active pokemon produce eggs as a timedEvent (but it'd only tick down for the pokemon that's currently active)

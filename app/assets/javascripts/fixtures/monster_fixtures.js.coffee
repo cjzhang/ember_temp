@@ -32,6 +32,17 @@ App.Monster.FIXTURES = [
   description: "A farfetch'd. Good for eating."
   }
   ,
+  {id: "ducklett"
+  name: "Ducklett"
+  baseCost: 100
+  basePerSecond: 0.6
+  baseExpRequired: 50
+  growthRate: 1.15
+  levelEffectiveness: 0.75
+  numAvailable: 0
+  description: "A little blue ducklett. It quacks when you look at it."
+  }
+  ,
   {id: "helioptile"
   name: "Helioptile"
   baseCost: 500

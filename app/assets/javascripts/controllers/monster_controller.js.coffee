@@ -21,10 +21,17 @@ App.MonsterController = Ember.ObjectController.extend(
   #TODO refactor this to use the buy action defined in GameRoute?
   actions: {
     buy: ->
+      return if @get('numAvailable') == 0
+
       gameController = @get('controllers.game')
       if gameController.attemptPurchase(@get('cost'))
         gameController.logMessage("You bought a " + @get('name') + "!")
         @incrementProperty('count')
+
+        #for monsters that have limited availability in the store
+        if @get("numAvailable") > 0
+          @decrementProperty('numAvailable')
+
         @get("model").save()
 
         @tryUnlockQuantityUpgrade()
