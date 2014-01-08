@@ -16,8 +16,8 @@ App.Item.FIXTURES = [
   cost: 100
   controllerName: "expItem"
   numAvailable: 10
-  description: "Gives your active pokemon 10 experience points."
-  effectAmount: 10
+  description: "Gives your active pokemon 50 experience points."
+  effectAmount: 50
   }
   ,
   {
@@ -26,8 +26,8 @@ App.Item.FIXTURES = [
   cost: 1000
   controllerName: "expItem"
   numAvailable: 5
-  description: "Gives your active pokemon 50 experience points."
-  effectAmount: 50
+  description: "Gives your active pokemon 100 experience points."
+  effectAmount: 100
   }
   ,
   {

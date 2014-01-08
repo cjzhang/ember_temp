@@ -23,7 +23,7 @@ App.LevelQuestController = App.QuestController.extend(
       quest = x[2]
       
       failures = monsters.filter((mon) ->
-        mon.get("level") < quest.get("completionAmount")
+        mon.get("displayLevel") < quest.get("completionAmount")
       )
       
       if failures.length == 0

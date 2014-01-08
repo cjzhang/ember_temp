@@ -36,6 +36,7 @@ App.ApplicationRoute = Ember.Route.extend(
       }
       
       keys = ["game", "item", "monster", "upgrade", "modifier", "quest"]
+      gameController = @controllerFor("game")
       promises = []
 
       for key in keys
@@ -59,6 +60,7 @@ App.ApplicationRoute = Ember.Route.extend(
         string = JSON.stringify(data)
         #string = LZString.compress(string)
         localStorage.setItem("save", string)
+        gameController.setNotice("Your game has been saved.")
       )
 
     #Pulls data from local storage. 
