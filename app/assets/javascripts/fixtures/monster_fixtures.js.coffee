@@ -9,7 +9,7 @@ App.Monster.FIXTURES = [
   numAvailable: 0
   count: 1
   description: "An egg. Sometimes it wobbles."
-  modifiers: ["eggClick00"]
+  modifiers: ["egg_starter"]
   }
   {id: "pidgey"
   name: "Pidgey"
@@ -18,7 +18,7 @@ App.Monster.FIXTURES = [
   baseExpRequired: 50
   levelEffectiveness: 1
   description: "It's a pidgey! Its eggs aren't worth very much, but at least it's cheap to buy."
-  modifiers: ["pidgeyTick00", "pidgeyTick01", "pidgeyTick02", "pidgeyTick03", "pidgeyTick04", "pidgeyClick00"]
+  modifiers: ["pidgey_quantity_5", "pidgey_quantity_10", "pidgey_quantity_25", "pidgey_quantity_50", "pidgey_quantity_75", "pidgey_quantity_100"]
   }
   ,
   {id: "farfetchd"
@@ -28,7 +28,7 @@ App.Monster.FIXTURES = [
   baseExpRequired: 100
   levelEffectiveness: 0.5
   description: "A farfetch'd. Good for eating."
-  modifiers: ["farfetchdTick00", "farfetchdTick01", "farfetchdTick02", "farfetchdTick03", "farfetchdTick04", "farfetchdClick00"]
+  modifiers: ["farfetchd_quantity_5", "farfetchd_quantity_10", "farfetchd_quantity_25", "farfetchd_quantity_50", "farfetchd_quantity_75", "farfetchd_quantity_100"]
   }
   ,
   {id: "ducklett"
@@ -48,6 +48,7 @@ App.Monster.FIXTURES = [
   baseExpRequired: 150
   levelEffectiveness: 0.25
   description: "A helioptile from the desert. Every once in a while, it throws off a spark."
+  modifiers: ["helioptile_quantity_5", "helioptile_quantity_10", "helioptile_quantity_25", "helioptile_quantity_50", "helioptile_quantity_75", "helioptile_quantity_100"]
   }
   ,
   {id: "meowth"
@@ -57,6 +58,7 @@ App.Monster.FIXTURES = [
   baseExpRequired: 200
   levelEffectiveness: 0.1
   description: "Not only do meowths lay eggs that are worth significantly more than pidgey eggs, but they'll swipe other pokemon's eggs as well. How convenient!"
+  modifiers: ["meowth_quantity_5", "meowth_quantity_10", "meowth_quantity_25", "meowth_quantity_50", "meowth_quantity_75", "meowth_quantity_100"]
   }
   ,
   {id: "zubat"
@@ -66,6 +68,7 @@ App.Monster.FIXTURES = [
   baseExpRequired: 250
   levelEffectiveness: 0.1
   description: "A zubat. You're sure you can trade its eggs for loads of pidgey eggs!"
+  modifiers: ["zubat_quantity_5", "zubat_quantity_10", "zubat_quantity_25", "zubat_quantity_50", "zubat_quantity_75", "zubat_quantity_100"]
   }
   ,
   {id: "ekans"

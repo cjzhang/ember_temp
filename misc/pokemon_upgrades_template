@@ -1,0 +1,112 @@
+App.Upgrade.FIXTURES
+  {id: "pokemonUpgrade0"
+  name:    "Attack"
+  cost:    500
+  unlocked: false
+  modifier: "pokemon_quantity_5"
+  description: "Your pokemons gain twice as much experience during training."
+  unlockCondition: "pokemon_quantity"
+  unlockValue: 5
+  }
+  ,
+  {id: "pokemonUpgrade1"
+  name:    "Nest"
+  cost:    1500
+  unlocked: false
+  modifier: "pokemon_quantity_10"
+  description: "Your pokemons lay eggs twice as quickly."
+  unlockCondition: "pokemon_quantity"
+  unlockValue: 10
+  }
+  ,
+  {id: "pokemonUpgrade2"
+  name:    "Nest"
+  cost:    20000
+  unlocked: false
+  modifier: "pokemon_quantity_25"
+  description: "Your pokemons lay eggs twice as quickly."
+  unlockCondition: "pokemon_quantity"
+  unlockValue: 25
+  }
+  ,
+  {id: "pokemonUpgrade3"
+  name:    "Nest"
+  cost:    1500000
+  unlocked: false
+  modifier: "pokemon_quantity_50"
+  description: "Your pokemons lay eggs twice as quickly."
+  unlockCondition: "pokemon_quantity"
+  unlockValue: 50
+  }
+  ,
+  {id: "pokemonUpgrade4"
+  name:    "Nest"
+  cost:    250000000
+  unlocked: false
+  modifier: "pokemon_quantity_75"
+  description: "Your pokemons lay eggs twice as quickly."
+  unlockCondition: "pokemon_quantity"
+  unlockValue: 75
+  }
+  ,
+  {id: "pokemonUpgrade5"
+  name:    "Nest"
+  cost:    20000000000
+  unlocked: false
+  modifier: "pokemon_quantity_100"
+  description: "Your pokemons lay eggs twice as quickly."
+  unlockCondition: "pokemon_quantity"
+  unlockValue: 100
+  }
+
+App.Modifier.FIXTURES
+  {id: "pokemon_quantity_5"
+  name: "Thunder Shock"
+  type: "multiply"
+  amount: 2
+  monster: "pokemon"
+  appliesTo: "click"
+  }
+  ,
+  {id: "pokemon_quantity_10"
+  name: "Basking Rock"
+  type: "multiply"
+  amount: 2
+  monster: "pokemon"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "pokemon_quantity_25"
+  name: "Heat Lamp"
+  type: "multiply"
+  amount: 2
+  monster: "pokemon"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "pokemon_quantity_50"
+  name: "Sunny Desert"
+  type: "multiply"
+  amount: 2
+  monster: "pokemon"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "pokemon_quantity_75"
+  name: "Lush Oasis"
+  type: "multiply"
+  amount: 2
+  monster: "pokemon"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "pokemon_quantity_100"
+  name: "Secluded Desert Enclosure"
+  type: "multiply"
+  amount: 2
+  monster: "pokemon"
+  appliesTo: "tick"
+  }
+
+App.Monster.FIXTURES
+  modifiers: ["pokemon_quantity_5", "pokemon_quantity_10", "pokemon_quantity_25", "pokemon_quantity_50", "pokemon_quantity_75", "pokemon_quantity_100"]

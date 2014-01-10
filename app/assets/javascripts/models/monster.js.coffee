@@ -3,7 +3,8 @@ App.Monster = DS.Model.extend(
   baseCost: DS.attr()
   basePerSecond: DS.attr()
   baseExpRequired: DS.attr()
-  growthRate: DS.attr("number", {defaultValue: 1.25})
+  #Refers to how quickly levels grow; cost growth is in game
+  growthRate: DS.attr("number", {defaultValue: 1.20})
   levelEffectiveness: DS.attr()
   description: DS.attr()
   modifiers: DS.hasMany('App.Modifier')

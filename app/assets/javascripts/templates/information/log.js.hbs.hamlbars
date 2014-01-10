@@ -1,1 +1,4 @@
-#log-messages
+#log
+  .title
+    Recent History
+  #log-messages

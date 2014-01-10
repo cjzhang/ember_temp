@@ -10,8 +10,8 @@ App.Game.FIXTURES = [
   {id: 2
   title: "Debug Version"
   playerName: "Meowth"
-  count: 1000000
+  count: 100000000000000000
   basePerClick: 1000
-  basePerSecond: 100
+  basePerSecond: 10000000000000
   }
 ]

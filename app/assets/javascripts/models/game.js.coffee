@@ -6,7 +6,7 @@ App.Game = DS.Model.extend(
   lifetimeExp: DS.attr('number', {defaultValue: 0})
   basePerClick: DS.attr()
   perClick: DS.attr('number', {defaultValue: 1})
-  growthRate: DS.attr('number', {defaultValue: 1.15})
+  growthRate: DS.attr('number', {defaultValue: 1.20})
   basePerSecond: DS.attr()
   perSecond: DS.attr('number', {defaultValue: 0})
   basePerSecondMultiplier: DS.attr('number', {defaultValue: 1})
