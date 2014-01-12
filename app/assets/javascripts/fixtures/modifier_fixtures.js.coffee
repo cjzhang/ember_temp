@@ -247,4 +247,196 @@ App.Modifier.FIXTURES = [
   monster: "zubat"
   appliesTo: "tick"
   }
+  ,
+  {id: "ekans_quantity_5"
+  name: "Wrap"
+  type: "multiply"
+  amount: 2
+  monster: "ekans"
+  appliesTo: "click"
+  }
+  ,
+  {id: "ekans_quantity_10"
+  name: "Feeder Rattatas"
+  type: "multiply"
+  amount: 2
+  monster: "ekans"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "ekans_quantity_25"
+  name: "Heater"
+  type: "multiply"
+  amount: 2
+  monster: "ekans"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "ekans_quantity_50"
+  name: "Quick-acting Venom"
+  type: "multiply"
+  amount: 2
+  monster: "ekans"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "ekans_quantity_75"
+  name: "Camouflage"
+  type: "multiply"
+  amount: 2
+  monster: "ekans"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "ekans_quantity_100"
+  name: "Densely-populated Field"
+  type: "multiply"
+  amount: 2
+  monster: "ekans"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "spinarak_quantity_5"
+  name: "Poison Sting"
+  type: "multiply"
+  amount: 2
+  monster: "spinarak"
+  appliesTo: "click"
+  }
+  ,
+  {id: "spinarak_quantity_10"
+  name: "Thick Webs"
+  type: "multiply"
+  amount: 2
+  monster: "spinarak"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "spinarak_quantity_25"
+  name: "Stronger Silk"
+  type: "multiply"
+  amount: 2
+  monster: "spinarak"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "spinarak_quantity_50"
+  name: "Swarm"
+  type: "multiply"
+  amount: 2
+  monster: "spinarak"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "spinarak_quantity_75"
+  name: "Larger Egg Sacs"
+  type: "multiply"
+  amount: 2
+  monster: "spinarak"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "spinarak_quantity_100"
+  name: "Spooky Dense Forest"
+  type: "multiply"
+  amount: 2
+  monster: "spinarak"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "psyduck_quantity_5"
+  name: "Confusion"
+  type: "multiply"
+  amount: 2
+  monster: "psyduck"
+  appliesTo: "click"
+  }
+  ,
+  {id: "psyduck_quantity_10"
+  name: "Concrete Lake"
+  type: "multiply"
+  amount: 2
+  monster: "psyduck"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "psyduck_quantity_25"
+  name: "Cattail Bushes"
+  type: "multiply"
+  amount: 2
+  monster: "psyduck"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "psyduck_quantity_50"
+  name: "Headache Medicine"
+  type: "multiply"
+  amount: 2
+  monster: "psyduck"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "psyduck_quantity_75"
+  name: "Psychic Ability Amplifier"
+  type: "multiply"
+  amount: 2
+  monster: "psyduck"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "psyduck_quantity_100"
+  name: "Secluded Marshlands"
+  type: "multiply"
+  amount: 2
+  monster: "psyduck"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "dratini_quantity_5"
+  name: "Dragon Rage"
+  type: "multiply"
+  amount: 2
+  monster: "dratini"
+  appliesTo: "click"
+  }
+  ,
+  {id: "dratini_quantity_10"
+  name: "Dragon Scale"
+  type: "multiply"
+  amount: 2
+  monster: "dratini"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "dratini_quantity_25"
+  name: "Tail Decoration"
+  type: "multiply"
+  amount: 2
+  monster: "dratini"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "dratini_quantity_50"
+  name: "Glittering Scales"
+  type: "multiply"
+  amount: 2
+  monster: "dratini"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "dratini_quantity_75"
+  name: "Faster Shedding"
+  type: "multiply"
+  amount: 2
+  monster: "dratini"
+  appliesTo: "tick"
+  }
+  ,
+  {id: "dratini_quantity_100"
+  name: "Marvelous Scales"
+  type: "multiply"
+  amount: 2
+  monster: "dratini"
+  appliesTo: "tick"
+  }
 ]

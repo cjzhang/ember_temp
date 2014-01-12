@@ -306,4 +306,245 @@ App.Upgrade.FIXTURES = [
   unlockCondition: "zubat_quantity"
   unlockValue: 100
   }
+  ,
+  {id: "ekansUpgrade0"
+  name:    "Wrap"
+  cost:    250000
+  unlocked: false
+  modifier: "ekans_quantity_5"
+  description: "Your ekanses gain twice as much experience during training."
+  unlockCondition: "ekans_quantity"
+  unlockValue: 5
+  }
+  ,
+  {id: "ekansUpgrade1"
+  name:    "Feeder Rattatas"
+  cost:    5000000
+  unlocked: false
+  modifier: "ekans_quantity_10"
+  description: "Your ekanses lay eggs twice as quickly."
+  unlockCondition: "ekans_quantity"
+  unlockValue: 10
+  }
+  ,
+  {id: "ekansUpgrade2"
+  name:    "Heater"
+  cost:    100000000
+  unlocked: false
+  modifier: "ekans_quantity_25"
+  description: "Your ekanses lay eggs twice as quickly."
+  unlockCondition: "ekans_quantity"
+  unlockValue: 25
+  }
+  ,
+  {id: "ekansUpgrade3"
+  name:    "Quick-acting Venom"
+  cost:    9000000000
+  unlocked: false
+  modifier: "ekans_quantity_50"
+  description: "Your ekanses lay eggs twice as quickly."
+  unlockCondition: "ekans_quantity"
+  unlockValue: 50
+  }
+  ,
+  {id: "ekansUpgrade4"
+  name:    "Camouflage"
+  cost:    800000000000
+  unlocked: false
+  modifier: "ekans_quantity_75"
+  description: "Your ekanses lay eggs twice as quickly."
+  unlockCondition: "ekans_quantity"
+  unlockValue: 75
+  }
+  ,
+  {id: "ekansUpgrade5"
+  name:    "Densely-populated Field"
+  cost:    80000000000000
+  unlocked: false
+  modifier: "ekans_quantity_100"
+  description: "Your ekanses lay eggs twice as quickly."
+  unlockCondition: "ekans_quantity"
+  unlockValue: 100
+  }
+  ,
+  {id: "spinarakUpgrade0"
+  name:    "Poison Sting"
+  cost:    20000000
+  unlocked: false
+  modifier: "spinarak_quantity_5"
+  description: "Your spinaraks gain twice as much experience during training."
+  unlockCondition: "spinarak_quantity"
+  unlockValue: 5
+  }
+  ,
+  {id: "spinarakUpgrade1"
+  name:    "Thick Webs"
+  cost:    70000000
+  unlocked: false
+  modifier: "spinarak_quantity_10"
+  description: "Your spinaraks lay eggs twice as quickly."
+  unlockCondition: "spinarak_quantity"
+  unlockValue: 10
+  }
+  ,
+  {id: "spinarakUpgrade2"
+  name:    "Stronger Silk"
+  cost:    900000000
+  unlocked: false
+  modifier: "spinarak_quantity_25"
+  description: "Your spinaraks lay eggs twice as quickly."
+  unlockCondition: "spinarak_quantity"
+  unlockValue: 25
+  }
+  ,
+  {id: "spinarakUpgrade3"
+  name:    "Swarm"
+  cost:    95000000000
+  unlocked: false
+  modifier: "spinarak_quantity_50"
+  description: "Your spinaraks lay eggs twice as quickly."
+  unlockCondition: "spinarak_quantity"
+  unlockValue: 50
+  }
+  ,
+  {id: "spinarakUpgrade4"
+  name:    "Larger Egg Sacs"
+  cost:    9000000000000
+  unlocked: false
+  modifier: "spinarak_quantity_75"
+  description: "Your spinaraks lay eggs twice as quickly."
+  unlockCondition: "spinarak_quantity"
+  unlockValue: 75
+  }
+  ,
+  {id: "spinarakUpgrade5"
+  name:    "Spooky Dense Forest"
+  cost:    900000000000000
+  unlocked: false
+  modifier: "spinarak_quantity_100"
+  description: "Your spinaraks lay eggs twice as quickly."
+  unlockCondition: "spinarak_quantity"
+  unlockValue: 100
+  }
+  ,
+  {id: "psyduckUpgrade0"
+  name:    "Confusion"
+  cost:    150000000
+  unlocked: false
+  modifier: "psyduck_quantity_5"
+  description: "Your psyducks gain twice as much experience during training."
+  unlockCondition: "psyduck_quantity"
+  unlockValue: 5
+  }
+  ,
+  {id: "psyduckUpgrade1"
+  name:    "Concrete Lake"
+  cost:    450000000
+  unlocked: false
+  modifier: "psyduck_quantity_10"
+  description: "Your psyducks lay eggs twice as quickly."
+  unlockCondition: "psyduck_quantity"
+  unlockValue: 10
+  }
+  ,
+  {id: "psyduckUpgrade2"
+  name:    "Cattail Bushes"
+  cost:    5000000000
+  unlocked: false
+  modifier: "psyduck_quantity_25"
+  description: "Your psyducks lay eggs twice as quickly."
+  unlockCondition: "psyduck_quantity"
+  unlockValue: 25
+  }
+  ,
+  {id: "psyduckUpgrade3"
+  name:    "Headache Medicine"
+  cost:    500000000
+  unlocked: false
+  modifier: "psyduck_quantity_50"
+  description: "Your psyducks lay eggs twice as quickly."
+  unlockCondition: "psyduck_quantity"
+  unlockValue: 50
+  }
+  ,
+  {id: "psyduckUpgrade4"
+  name:    "Psychic Ability Amplifier"
+  cost:    50000000000000
+  unlocked: false
+  modifier: "psyduck_quantity_75"
+  description: "Your psyducks lay eggs twice as quickly."
+  unlockCondition: "psyduck_quantity"
+  unlockValue: 75
+  }
+  ,
+  {id: "psyduckUpgrade5"
+  name:    "Secluded Marshlands"
+  cost:    5000000000000000
+  unlocked: false
+  modifier: "psyduck_quantity_100"
+  description: "Your psyducks lay eggs twice as quickly."
+  unlockCondition: "psyduck_quantity"
+  unlockValue: 100
+  }
+  ,
+  {id: "dratiniUpgrade0"
+  name:    "Dragon Rage"
+  cost:    500000000
+  unlocked: false
+  modifier: "dratini_quantity_5"
+  description: "Your dratinis gain twice as much experience during training."
+  unlockCondition: "dratini_quantity"
+  unlockValue: 5
+  }
+  ,
+  {id: "dratiniUpgrade1"
+  name:    "Dragon Scale"
+  cost:    1500000000
+  unlocked: false
+  modifier: "dratini_quantity_10"
+  description: "Your dratinis lay eggs twice as quickly."
+  unlockCondition: "dratini_quantity"
+  unlockValue: 10
+  }
+  ,
+  {id: "dratiniUpgrade2"
+  name:    "Tail Decoration"
+  cost:    30000000000
+  unlocked: false
+  modifier: "dratini_quantity_25"
+  description: "Your dratinis lay eggs twice as quickly."
+  unlockCondition: "dratini_quantity"
+  unlockValue: 25
+  }
+  ,
+  {id: "dratiniUpgrade3"
+  name:    "Glittering Scales"
+  cost:    3000000000000
+  unlocked: false
+  modifier: "dratini_quantity_50"
+  description: "Your dratinis lay eggs twice as quickly."
+  unlockCondition: "dratini_quantity"
+  unlockValue: 50
+  }
+  ,
+  {id: "dratiniUpgrade4"
+  name:    "Faster Shedding"
+  cost:    300000000000000
+  unlocked: false
+  modifier: "dratini_quantity_75"
+  description: "Your dratinis lay eggs twice as quickly."
+  unlockCondition: "dratini_quantity"
+  unlockValue: 75
+  }
+  ,
+  {id: "dratiniUpgrade5"
+  name:    "Marvelous Scales"
+  cost:    20000000000000000
+  unlocked: false
+  modifier: "dratini_quantity_100"
+  description: "Your dratinis lay eggs twice as quickly."
+  unlockCondition: "dratini_quantity"
+  unlockValue: 100
+  }
+
 ]
