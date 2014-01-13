@@ -1,6 +1,6 @@
 App.GameController = Ember.ObjectController.extend(
   game: null
-  needs: ["monsters"]
+  needs: ["monsters", "timedEvents"]
 
   perSecond: (->
     perSecondTotal = @game.get("basePerSecond")
@@ -52,6 +52,8 @@ App.GameController = Ember.ObjectController.extend(
         if (modifier.get("ticksRemaining") == 0)
           modifier.deleteRecord()        
     , this)
+
+    @get("controllers.timedEvents").tick()
 
     @store.commit()
 

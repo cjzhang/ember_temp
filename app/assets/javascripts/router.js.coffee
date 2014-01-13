@@ -92,13 +92,12 @@ App.ApplicationRoute = Ember.Route.extend(
               if attr != "id"
                 model.set(attr, attrs[attr]) 
                 model.save()
-           currentStore.commit()
+            currentStore.commit()
         )
         true
 
       Ember.RSVP.all(promises).then((results) ->
         for recordArray in results
-          console.log("trying to load" + recordArray.toString())
           loadRecords(recordArray) 
         true
       )
@@ -150,6 +149,10 @@ App.GameRoute = Ember.Route.extend(
     itemsController = @controllerFor("items")
     itemsController.set('content', items)
     controller.set('items', items)
+
+    events = @store.find("timedEvent")
+    eventsController = @controllerFor("timedEvents")
+    eventsController.set('content', events)
 
     @store.find("modifier")
     
