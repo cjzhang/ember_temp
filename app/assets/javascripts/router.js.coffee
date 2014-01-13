@@ -28,14 +28,15 @@ App.ApplicationRoute = Ember.Route.extend(
       data = {}
       blueprint = {
         "App.Game": ["playerName", "count", "lifetimeCount", "lifetimeExp"]
-        "App.Item": ["numAvailable", "unlocked", "count"]
+        "App.Item": ["numAvailable", "unlocked", "count", "shopRestockAmount"]
         "App.Monster": ["count", "numAvailable", "exp", "level", "totalExp", "eggsEarned"]
         "App.Upgrade": ["unlocked", "purchased"]
         "App.Modifier": ["active", "ticksRemaining"]
         "App.Quest": ["completed", "unlocked"]
+        "App.TimedEvent": ["ticksRemaining"]
       }
       
-      keys = ["game", "item", "monster", "upgrade", "modifier", "quest"]
+      keys = ["game", "item", "monster", "upgrade", "modifier", "quest", "timedEvent"]
       gameController = @controllerFor("game")
       promises = []
 
@@ -58,7 +59,7 @@ App.ApplicationRoute = Ember.Route.extend(
 
       Ember.RSVP.all(promises).then((p) ->
         string = JSON.stringify(data)
-        #string = LZString.compress(string)
+        string = LZString.compress(string)
         localStorage.setItem("save", string)
         gameController.setNotice("Your game has been saved.")
       )
@@ -69,10 +70,10 @@ App.ApplicationRoute = Ember.Route.extend(
     loadSave: ->
       return unless localStorage && localStorage.getItem("save")
       string = localStorage.getItem("save")
-      #string = LZString.decompress(string)
+      string = LZString.decompress(string)
       data = JSON.parse(string)
       currentStore = @store
-      models = ["game", "item", "monster", "upgrade", "modifier", "quest"]
+      models = ["game", "item", "monster", "upgrade", "modifier", "quest", "timedEvent"]
 
       console.log("loading save")
       promises = []
